@@ -21,6 +21,7 @@ struct ContentView: View {
     @FetchRequest(
             sortDescriptors: [NSSortDescriptor(keyPath: \Timetable.timestamp, ascending: true)],
             animation: .default)
+    //Timetableリストをtablesとして
         private var tables: FetchedResults<Timetable>
     var body: some View {
         ZStack{
@@ -29,6 +30,7 @@ struct ContentView: View {
                     if tables.isEmpty{
                         Text("no data")
                     }else{
+                        //リストの出力
                         List{
                             ForEach(tables,id:\.id){table in
                                 HStack{
@@ -36,16 +38,15 @@ struct ContentView: View {
                                     Spacer()
                                 }
                                 .contentShape(Rectangle())
+                                //リストの要素をタップしたら
                                 .onTapGesture {
                                     
                                     deletetable()
-                                    }
-
-                                
+                                }
                             }
                         }
-
                     }
+                    //ボタンの表示
                     VStack{
                         Spacer()
                         HStack{
@@ -73,7 +74,7 @@ struct InputView: View{
     @Environment(\.managedObjectContext) private var context
     @Environment(\.presentationMode) var presentationMode
     @State private var name = ""
-    @State private var destination = ""
+    @State private var direction = ""
     @State private var Ttime: Int16?
     @State private var nameeditting = false
     @State private var desteditting = false
@@ -108,25 +109,9 @@ struct InputView: View{
                         .padding()
                         // 編集フラグがONの時に枠に影を付ける
                         .shadow(color: nameeditting ? .blue : .clear, radius: 3)
-                    //駅名の入力欄
-                    TextField("行き先",text: $destination,
-                              onEditingChanged: { begin in
-                                /// 入力開始処理
-                                if begin {
-                                    self.desteditting = true
-                                    // 編集フラグをオン
-                                    /// 入力終了処理
-                                } else {
-                                    self.desteditting = false   // 編集フラグをオフ
-                                }
-                              })
-                        //入力中に枠を青く強調表示
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                        // 編集フラグがONの時に枠に影を付ける
-                        .shadow(color: desteditting ? .blue : .clear, radius: 3)
-                    
                 }
+                
+                
                 
                 //時刻表の入力欄
                 TextField("時刻表",value: $Ttime, formatter: NumberFormatter(),
@@ -150,7 +135,7 @@ struct InputView: View{
                 
                 Button(action: {
                     self.showingAlert = true
-                    savetable(text: name, num: Ttime)
+                    savetable(text: name, num: Ttime ?? 0)
                     /// 現在のViewを閉じる
                     presentationMode.wrappedValue.dismiss()
                 }){
