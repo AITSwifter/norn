@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC54AAFF2715A6DD001B6157 /* InputTimeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC54AAFE2715A6DD001B6157 /* InputTimeTableView.swift */; };
+		CC54AB012715B3C8001B6157 /* InputMyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC54AB002715B3C8001B6157 /* InputMyTableView.swift */; };
 		CC8307FF270C514E00CFA1CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8307FE270C514E00CFA1CA /* AppDelegate.swift */; };
 		CC830801270C514E00CFA1CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC830800270C514E00CFA1CA /* SceneDelegate.swift */; };
 		CC830803270C514E00CFA1CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC830802270C514E00CFA1CA /* ContentView.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CC54AAFE2715A6DD001B6157 /* InputTimeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTimeTableView.swift; sourceTree = "<group>"; };
+		CC54AB002715B3C8001B6157 /* InputMyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMyTableView.swift; sourceTree = "<group>"; };
 		CC8307FB270C514E00CFA1CA /* norn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = norn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC8307FE270C514E00CFA1CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC830800270C514E00CFA1CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				CC8307FE270C514E00CFA1CA /* AppDelegate.swift */,
 				CC830800270C514E00CFA1CA /* SceneDelegate.swift */,
 				CC830802270C514E00CFA1CA /* ContentView.swift */,
+				CC54AAFE2715A6DD001B6157 /* InputTimeTableView.swift */,
+				CC54AB002715B3C8001B6157 /* InputMyTableView.swift */,
 				CC830807270C514F00CFA1CA /* Assets.xcassets */,
 				CC83080C270C514F00CFA1CA /* LaunchScreen.storyboard */,
 				CC83080F270C514F00CFA1CA /* Info.plist */,
@@ -249,11 +255,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC54AAFF2715A6DD001B6157 /* InputTimeTableView.swift in Sources */,
 				CC8307FF270C514E00CFA1CA /* AppDelegate.swift in Sources */,
 				CC830801270C514E00CFA1CA /* SceneDelegate.swift in Sources */,
 				CC830806270C514E00CFA1CA /* norn.xcdatamodeld in Sources */,
 				CC830827270C53FA00CFA1CA /* Timeview.intentdefinition in Sources */,
 				CC830803270C514E00CFA1CA /* ContentView.swift in Sources */,
+				CC54AB012715B3C8001B6157 /* InputMyTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,18 +4,20 @@
         <attribute name="arrivel" optional="YES" attributeType="String"/>
         <attribute name="departure" optional="YES" attributeType="String"/>
         <attribute name="middle" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="needtime" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="Timetable" representedClassName="Timetable" syncable="YES" codeGenerationType="class">
         <attribute name="direction" optional="YES" attributeType="String"/>
-        <attribute name="dowcode" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="holitable" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="ordinarytable" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="saturdaytable" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="timetable" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Timetable" positionX="-54" positionY="-9" width="128" height="104"/>
-        <element name="Mytable" positionX="-54" positionY="27" width="128" height="104"/>
+        <element name="Mytable" positionX="-54" positionY="27" width="128" height="119"/>
+        <element name="Timetable" positionX="-54" positionY="-9" width="128" height="119"/>
     </elements>
 </model>
