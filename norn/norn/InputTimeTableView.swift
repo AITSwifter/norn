@@ -14,15 +14,23 @@ struct InputTimeTableView: View{
     @Environment(\.presentationMode) var presentationMode
     
     @State private var name = ""
-    @State private var direction = ""
-    @State private var Ttime: Int16?
     @State private var nameeditting = false
+    @State private var direction = ""
     @State private var direeditting = false
+    @State private var Ttime: Int16?
     @State private var Ttimeeditting = false
     @State private var showingAlert = false
     
+    @State private var ordinaly = true
+    @State private var saturday = false
+    @State private var holiday = false
+    
     var textisVoid: Bool{
         return !name.isEmpty && !direction.isEmpty
+    }
+    
+    var checkisVoid: Bool{
+        return !ordinaly && !saturday && !holiday
     }
     
     var body: some View{
@@ -75,40 +83,74 @@ struct InputTimeTableView: View{
                 }
                 
                 HStack{
+                    Toggle("平日",isOn: $ordinaly)
+                        .toggleStyle(MyCheckboxToggleStyle())
+                        .padding()
+                    Toggle("土曜",isOn: $saturday)
+                        .toggleStyle(MyCheckboxToggleStyle())
+                        .padding()
+                    Toggle("日祝",isOn: $holiday)
+                        .toggleStyle(MyCheckboxToggleStyle())
+                        .padding()
+                }
+                
+                List{
+                    ForEach(5..<25){ hour in
+                        HStack{
+                            Text("\(hour)")
+                                .frame(width: 30)
+                            Divider()
+                            ScrollView(.horizontal, showsIndicators: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/){
+                                HStack{
+                                    ForEach(1..<60){ minut in
+                                        Text("\(minut)")
+                                    }
+                                }
+                            }
+                            Divider()
+                            Button("+"){
+                                
+                            }
+                            .frame(width: 20, height: 20,alignment: .top)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color.blue, lineWidth: 2)
+                            )
+                        }
+                    }
                     
                 }
                 
                 
-                
-                //時刻表の入力欄
-                TextField("時刻表",value: $Ttime, formatter: NumberFormatter(),
-                          onEditingChanged: { begin in
-                            /// 入力開始処理
-                            if begin {
-                                self.Ttimeeditting = true
-                                // 編集フラグをオン
-                                /// 入力終了処理
-                            } else {
-                                self.Ttimeeditting = false   // 編集フラグをオフ
-                            }
-                          })
-                    .keyboardType(.numberPad)
-                    //入力中に枠を青く強調表示
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                    // 編集フラグがONの時に枠に影を付ける
-                    .shadow(color: Ttimeeditting ? .blue : .clear, radius: 3)
+                //                //時刻表の入力欄
+                //                TextField("時刻表",value: $Ttime, formatter: NumberFormatter(),
+                //                          onEditingChanged: { begin in
+                //                            /// 入力開始処理
+                //                            if begin {
+                //                                self.Ttimeeditting = true
+                //                                // 編集フラグをオン
+                //                                /// 入力終了処理
+                //                            } else {
+                //                                self.Ttimeeditting = false   // 編集フラグをオフ
+                //                            }
+                //                          })
+                //                    .keyboardType(.numberPad)
+                //                    //入力中に枠を青く強調表示
+                //                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                //                    .padding()
+                //                    // 編集フラグがONの時に枠に影を付ける
+                //                    .shadow(color: Ttimeeditting ? .blue : .clear, radius: 3)
                 
                 
                 Button(action: {
                     self.showingAlert = true
-                    savetable(text: name, num: Ttime ?? 0)
+                    savetable(text: name,direction: direction, num: Ttime ?? 0, ordinal: ordinaly, saturday: saturday, holiday: holiday)
                     /// 現在のViewを閉じる
                     presentationMode.wrappedValue.dismiss()
                 }){
                     Text("保存")
                 }
-                .disabled(!textisVoid)
+                .disabled(!textisVoid || checkisVoid)
                 .alert(isPresented: $showingAlert){
                     Alert(title: Text("保存"),
                           message: Text("\(name)を保存しました")
@@ -124,18 +166,28 @@ struct InputTimeTableView: View{
         
     }
     
-    func savetable(text: String, num: Int16){
+    func savetable(text: String,direction: String, num: Int16, ordinal: Bool, saturday: Bool, holiday: Bool){
         /// 時刻表新規登録処理
         let newTtable = Timetable(context: context)
         newTtable.name = text
-        newTtable.timetable = num
         newTtable.timestamp = Date()
         try? context.save()
     }
     
-    
+    struct MyCheckboxToggleStyle: ToggleStyle {
+        func makeBody(configuration: Configuration) -> some View {
+            return HStack {
+                configuration.label
+                Image(systemName: configuration.isOn ? "checkmark.square" : "square")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .onTapGesture { configuration.isOn.toggle() }
+            }
+        }
+    }
     
 }
+
 
 struct InputTimeTableView_Previews: PreviewProvider {
     static var previews: some View {

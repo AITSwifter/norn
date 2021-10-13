@@ -51,7 +51,7 @@ struct ContentView: View {
                         Spacer()
                         HStack{
                             Spacer()
-                            NavigationLink("＋", destination: InputMyTableView())
+                            NavigationLink("＋", destination: InputTimeTableView())
                                 .font(.system(size: 30))
                                 .frame(width: 50, height: 50)
                                 .background(Color.red)
