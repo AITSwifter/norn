@@ -51,6 +51,7 @@ struct InputMyTableView: View{
                     UIApplication.shared.closeKeyboard()
                 }
             VStack{
+                CustomTextField(iseditting: self.$nameeditting, variable: $name, text: "プリセット名")
                 TextField("プリセット名",text: $name,
                           onEditingChanged: { begin in
                             /// 入力開始処理
@@ -70,23 +71,8 @@ struct InputMyTableView: View{
                 ScrollView{
                     VStack{
                         //出発駅名の入力欄
-                        TextField("出発駅名",text: $start,
-                                  onEditingChanged: { begin in
-                                    /// 入力開始処理
-                                    if begin {
-                                        self.starteditting = true
-                                        // 編集フラグをオン
-                                        /// 入力終了処理
-                                    } else {
-                                        self.starteditting = false   // 編集フラグをオフ
-                                    }
-                                  })
-                            //入力中に枠を青く強調表示
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding()
-                            // 編集フラグがONの時に枠に影を付ける
-                            .shadow(color: starteditting ? .blue : .clear, radius: 3)
-                        
+                        CustomTextField(iseditting: self.$starteditting, variable: $start, text: "出発駅名")
+                                                
                         HStack{
                             Text("↓")
                                 .padding()
@@ -114,23 +100,7 @@ struct InputMyTableView: View{
                             ForEach(1..<midd.count,id: \.self) { index in
                                 
                                 VStack{
-                                    
-                                    TextField("途中駅名",text: $midd[index-1],
-                                              onEditingChanged: { begin in
-                                                /// 入力開始処理
-                                                if begin {
-                                                    self.mideditting[index] = true
-                                                    // 編集フラグをオン
-                                                    /// 入力終了処理
-                                                } else {
-                                                    self.mideditting[index] = false   // 編集フラグをオフ
-                                                }
-                                              })
-                                        //入力中に枠を青く強調表示
-                                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                                        .padding()
-                                        // 編集フラグがONの時に枠に影を付ける
-                                        .shadow(color: mideditting[index] ? .blue : .clear, radius: 3)
+                                    CustomTextField(iseditting: self.$mideditting[index-1], variable: $midd[index-1], text: "途中駅名")
 
                                     HStack{
                                         
@@ -162,23 +132,8 @@ struct InputMyTableView: View{
                             
                         }
                         //到着駅名の入力欄
-                        TextField("到着駅名",text: $end,
-                                  onEditingChanged: { begin in
-                                    /// 入力開始処理
-                                    if begin {
-                                        self.endeditting = true
-                                        // 編集フラグをオン
-                                        /// 入力終了処理
-                                    } else {
-                                        self.endeditting = false   // 編集フラグをオフ
-                                    }
-                                  })
-                            //入力中に枠を青く強調表示
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding()
-                            // 編集フラグがONの時に枠に影を付ける
-                            .shadow(color: endeditting ? .blue : .clear, radius: 3)
-                        
+                        CustomTextField(iseditting: self.$endeditting, variable: $end, text: "到着駅名")
+                                               
                         
                     }
                 }
@@ -223,6 +178,8 @@ struct InputMyTableView: View{
     }
     
 }
+
+
 
 struct InputMyTableView_Previews: PreviewProvider {
     static var previews: some View {

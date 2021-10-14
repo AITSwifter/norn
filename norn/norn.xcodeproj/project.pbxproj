@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC4BA54427184BC3002CA990 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4BA54327184BC3002CA990 /* CustomView.swift */; };
 		CC54AAFF2715A6DD001B6157 /* InputTimeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC54AAFE2715A6DD001B6157 /* InputTimeTableView.swift */; };
 		CC54AB012715B3C8001B6157 /* InputMyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC54AB002715B3C8001B6157 /* InputMyTableView.swift */; };
 		CC8307FF270C514E00CFA1CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8307FE270C514E00CFA1CA /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CC4BA54327184BC3002CA990 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		CC54AAFE2715A6DD001B6157 /* InputTimeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTimeTableView.swift; sourceTree = "<group>"; };
 		CC54AB002715B3C8001B6157 /* InputMyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMyTableView.swift; sourceTree = "<group>"; };
 		CC8307FB270C514E00CFA1CA /* norn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = norn.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 				CC830802270C514E00CFA1CA /* ContentView.swift */,
 				CC54AAFE2715A6DD001B6157 /* InputTimeTableView.swift */,
 				CC54AB002715B3C8001B6157 /* InputMyTableView.swift */,
+				CC4BA54327184BC3002CA990 /* CustomView.swift */,
 				CC830807270C514F00CFA1CA /* Assets.xcassets */,
 				CC83080C270C514F00CFA1CA /* LaunchScreen.storyboard */,
 				CC83080F270C514F00CFA1CA /* Info.plist */,
@@ -256,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC54AAFF2715A6DD001B6157 /* InputTimeTableView.swift in Sources */,
+				CC4BA54427184BC3002CA990 /* CustomView.swift in Sources */,
 				CC8307FF270C514E00CFA1CA /* AppDelegate.swift in Sources */,
 				CC830801270C514E00CFA1CA /* SceneDelegate.swift in Sources */,
 				CC830806270C514E00CFA1CA /* norn.xcdatamodeld in Sources */,
