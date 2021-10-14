@@ -20,30 +20,25 @@ struct InputMyTableView: View{
     @State private var starteditting = false
     @State private var end = ""
     @State private var endeditting = false
-    @State private var midd: [String] = [""]
+    @State private var midd: [String] = ["1"]
     @State private var mideditting: [Bool] = [false]
     @State private var needtime: [Int16] = [0]
     @State private var neededitting: [Bool] = [false]
     
-    var middisVoid: Bool{
-        return midd.count > 1
+    var middisCount: Bool{
+        return 1 < mideditting.count
     }
     
-//    struct tabledata{
-//        var middtext: String
-//        var mideitting: Bool
-//        var needtime: Int16
-//        var neededitting: Bool
-//
-//        init(mideitting: Bool,middtext: String,neededitting: Bool){
-//            self.mideitting = mideitting
-//            self.middtext = middtext
-//            self.neededitting = neededitting
-//        }
-//    }
-//
-//    var controls:[tabledata] = []
-    
+    var textisVoid: Bool{
+        var midflg = true
+        if middisCount {
+            midd.forEach{
+                midflg = midflg && !$0.isEmpty
+            }
+        }
+        
+        return !start.isEmpty && !end.isEmpty && !name.isEmpty && midflg
+    }
     
     var body: some View{
         ZStack{
@@ -191,26 +186,27 @@ struct InputMyTableView: View{
                 
                 HStack{
                     Button("途中駅追加",action: {
-                        self.midd.append("")
-                        self.mideditting.append(false)
-                        self.needtime.append(0)
-                        self.neededitting.append(false)
+                        self.midd.insert("", at: 0)
+                        self.mideditting.insert(false, at: 0)
+                        self.needtime.insert(0, at: 0)
+                        self.neededitting.insert(false, at: 0)
                     })
                     .padding()
                     Button("途中駅削除",action: {
-                        self.midd.removeLast()
-                        self.mideditting.removeLast()
-                        self.needtime.removeLast()
-                        self.neededitting.removeLast()
+                        self.midd.removeFirst()
+                        self.mideditting.removeFirst()
+                        self.needtime.removeFirst()
+                        self.neededitting.removeFirst()
 
                     })
                     .padding()
-                    .disabled(!middisVoid)
+                    .disabled(!middisCount)
                 }
                 Button("保存",action: {
                     
                     Savemytable()
                 })
+                .disabled(!textisVoid)
                 .padding()
             }
             
