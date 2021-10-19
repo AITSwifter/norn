@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-import Combine
+import CoreData
 
 struct InputMyTableView: View{
     
@@ -24,6 +24,7 @@ struct InputMyTableView: View{
     @State private var mideditting: [Bool] = [false]
     @State private var needtime: [Int16] = [0]
     @State private var neededitting: [Bool] = [false]
+    @State private var showingAlert = false
     
     var middisCount: Bool{
         return 1 < mideditting.count
@@ -52,27 +53,12 @@ struct InputMyTableView: View{
                 }
             VStack{
                 CustomTextField(iseditting: self.$nameeditting, variable: $name, text: "プリセット名")
-                TextField("プリセット名",text: $name,
-                          onEditingChanged: { begin in
-                            /// 入力開始処理
-                            if begin {
-                                self.nameeditting = true
-                                // 編集フラグをオン
-                                /// 入力終了処理
-                            } else {
-                                self.nameeditting = false   // 編集フラグをオフ
-                            }
-                          })
-                    //入力中に枠を青く強調表示
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                    // 編集フラグがONの時に枠に影を付ける
-                    .shadow(color: nameeditting ? .blue : .clear, radius: 3)
+                
                 ScrollView{
                     VStack{
                         //出発駅名の入力欄
                         CustomTextField(iseditting: self.$starteditting, variable: $start, text: "出発駅名")
-                                                
+                        
                         HStack{
                             Text("↓")
                                 .padding()
@@ -101,7 +87,7 @@ struct InputMyTableView: View{
                                 
                                 VStack{
                                     CustomTextField(iseditting: self.$mideditting[index-1], variable: $midd[index-1], text: "途中駅名")
-
+                                    
                                     HStack{
                                         
                                         Text("↓")
@@ -122,7 +108,7 @@ struct InputMyTableView: View{
                                         .frame(width: 70)
                                         .textFieldStyle(RoundedBorderTextFieldStyle())
                                         .shadow(color: neededitting[index] ? .blue : .clear, radius: 3)
-
+                                        
                                         Text("分")
                                             .frame(alignment: .leading)
                                     }
@@ -133,7 +119,7 @@ struct InputMyTableView: View{
                         }
                         //到着駅名の入力欄
                         CustomTextField(iseditting: self.$endeditting, variable: $end, text: "到着駅名")
-                                               
+                        
                         
                     }
                 }
@@ -152,17 +138,23 @@ struct InputMyTableView: View{
                         self.mideditting.removeFirst()
                         self.needtime.removeFirst()
                         self.neededitting.removeFirst()
-
+                        
                     })
                     .padding()
                     .disabled(!middisCount)
                 }
                 Button("保存",action: {
-                    
-                    Savemytable()
+                    self.showingAlert = true
+                    Savemytable(name: name)
                 })
                 .disabled(!textisVoid)
                 .padding()
+                .alert(isPresented: $showingAlert) {
+                            Alert(title: Text("タイトル"),
+                                  message: Text("詳細メッセージです"),
+                                  dismissButton: .default(Text("了解"),
+                                                          action: {print("了解がタップされた")})) // ボタンがタップされた時の処理
+                        }
             }
             
             
@@ -172,9 +164,15 @@ struct InputMyTableView: View{
         .navigationBarTitle("プリセット入力画面",displayMode: .inline)
     }
     
-    func Savemytable(){
+    func Savemytable(name: String){
         let newmytable = Mytable(context: context)
-        
+        newmytable.name = name
+        do {
+            try context.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
     }
     
 }

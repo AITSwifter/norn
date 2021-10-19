@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import CoreData
 
 struct InputTimeTableView: View{
     
@@ -150,6 +151,15 @@ struct InputTimeTableView: View{
         let newTtable = Timetable(context: context)
         newTtable.name = text
         newTtable.timestamp = Date()
+        if ordinal {
+            newTtable.ordinarytable = Int16(num[0][0])
+        }
+        if saturday {
+            newTtable.saturdaytable = Int16(num[0][0])
+        }
+        if ordinal {
+            newTtable.holitable = Int16(num[0][0])
+        }
         try? context.save()
     }
     

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 enum display {
     case main
