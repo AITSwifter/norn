@@ -8,47 +8,65 @@
 import SwiftUI
 import CoreData
 
+enum display{
+    case output
+    case addtable
+    case addpreset
+}
+
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Timetable.timestamp, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var items: FetchedResults<Timetable>
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink(destination: Text("Item at \(item.timestamp!, formatter: itemFormatter)")) {
-                        HStack{
-                            Text(item.name ?? "Item")
-                            Text(item.timestamp!, formatter: itemFormatter)
+            VStack{
+                Text(String(items.count))
+                List {
+                    ForEach(items) { item in
+                        NavigationLink(destination: OutputView()) {
+                            HStack{
+                                Text(item.name ?? "Item")
+                                Text("to \(item.direction ?? "out")" )
+                                Text(item.timestamp!, formatter: itemFormatter)
+                            }
+                            
                         }
-                        
                     }
+                    .onDelete(perform: deleteItems)
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                .toolbar {
+    #if os(iOS)
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
                     }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: AddPreset()){
+                            Label("Add preset", systemImage: "plus")
+                        }
+                    }
+    #endif
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: AddTimeTable()){
+                            Label("Add Item", systemImage: "plus").foregroundColor(.red)
+                        }
+                    }
+                    
+                    
                 }
+                Text("Select an item")
             }
-            Text("Select an item")
+
         }
     }
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(context: viewContext)
+            let newItem = Timetable(context: viewContext)
             newItem.timestamp = Date()
 
             do {
@@ -84,6 +102,14 @@ private let itemFormatter: DateFormatter = {
     formatter.timeStyle = .medium
     return formatter
 }()
+
+//UIApplicationを拡張してキーボードを閉じる関数を実装
+extension UIApplication {
+    func closeKeyboard() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

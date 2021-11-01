@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CCA6661B272FE7F60085B172 /* AddPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA6661A272FE7F60085B172 /* AddPreset.swift */; };
+		CCA6661C272FE7F60085B172 /* AddPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA6661A272FE7F60085B172 /* AddPreset.swift */; };
 		CCCCCF56271E9E14004D05D2 /* Tnorn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF43271E9E12004D05D2 /* Tnorn.xcdatamodeld */; };
 		CCCCCF57271E9E14004D05D2 /* Tnorn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF43271E9E12004D05D2 /* Tnorn.xcdatamodeld */; };
 		CCCCCF58271E9E14004D05D2 /* TnornApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF45271E9E12004D05D2 /* TnornApp.swift */; };
@@ -24,6 +26,14 @@
 		CCCCCF79271EA6F5004D05D2 /* TimeTable.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF75271EA6F3004D05D2 /* TimeTable.intentdefinition */; };
 		CCCCCF7A271EA6F5004D05D2 /* TimeTable.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF75271EA6F3004D05D2 /* TimeTable.intentdefinition */; };
 		CCCCCF7D271EA6F5004D05D2 /* TimeTableExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CCCCCF6C271EA6F3004D05D2 /* TimeTableExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CCCCCF86271FCB4D004D05D2 /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF85271FCB4D004D05D2 /* OutputView.swift */; };
+		CCCCCF87271FCB4D004D05D2 /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF85271FCB4D004D05D2 /* OutputView.swift */; };
+		CCCCCF89271FD082004D05D2 /* AddTimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF88271FD082004D05D2 /* AddTimeTable.swift */; };
+		CCCCCF8A271FD082004D05D2 /* AddTimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF88271FD082004D05D2 /* AddTimeTable.swift */; };
+		CCCCCF8C271FD12E004D05D2 /* CustomVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF8B271FD12E004D05D2 /* CustomVIew.swift */; };
+		CCCCCF8D271FD12E004D05D2 /* CustomVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF8B271FD12E004D05D2 /* CustomVIew.swift */; };
+		CCCCCF8F271FEB4B004D05D2 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF8E271FEB4B004D05D2 /* TestView.swift */; };
+		CCCCCF90271FEB4B004D05D2 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF8E271FEB4B004D05D2 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CCA6661A272FE7F60085B172 /* AddPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPreset.swift; sourceTree = "<group>"; };
 		CCCCCF44271E9E12004D05D2 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		CCCCCF45271E9E12004D05D2 /* TnornApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TnornApp.swift; sourceTree = "<group>"; };
 		CCCCCF46271E9E12004D05D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +77,10 @@
 		CCCCCF75271EA6F3004D05D2 /* TimeTable.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = TimeTable.intentdefinition; sourceTree = "<group>"; };
 		CCCCCF76271EA6F5004D05D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCCCCF78271EA6F5004D05D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCCCCF85271FCB4D004D05D2 /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
+		CCCCCF88271FD082004D05D2 /* AddTimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimeTable.swift; sourceTree = "<group>"; };
+		CCCCCF8B271FD12E004D05D2 /* CustomVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVIew.swift; sourceTree = "<group>"; };
+		CCCCCF8E271FEB4B004D05D2 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,9 +126,14 @@
 			children = (
 				CCCCCF45271E9E12004D05D2 /* TnornApp.swift */,
 				CCCCCF46271E9E12004D05D2 /* ContentView.swift */,
+				CCCCCF88271FD082004D05D2 /* AddTimeTable.swift */,
+				CCCCCF85271FCB4D004D05D2 /* OutputView.swift */,
 				CCCCCF47271E9E12004D05D2 /* Persistence.swift */,
+				CCCCCF8B271FD12E004D05D2 /* CustomVIew.swift */,
+				CCCCCF8E271FEB4B004D05D2 /* TestView.swift */,
 				CCCCCF48271E9E14004D05D2 /* Assets.xcassets */,
 				CCCCCF43271E9E12004D05D2 /* Tnorn.xcdatamodeld */,
+				CCA6661A272FE7F60085B172 /* AddPreset.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -220,7 +240,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					CCCCCF4C271E9E14004D05D2 = {
 						CreatedOnToolsVersion = 13.0;
@@ -285,9 +305,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCCCCF89271FD082004D05D2 /* AddTimeTable.swift in Sources */,
+				CCCCCF8C271FD12E004D05D2 /* CustomVIew.swift in Sources */,
 				CCCCCF56271E9E14004D05D2 /* Tnorn.xcdatamodeld in Sources */,
 				CCCCCF5C271E9E14004D05D2 /* Persistence.swift in Sources */,
+				CCA6661B272FE7F60085B172 /* AddPreset.swift in Sources */,
+				CCCCCF86271FCB4D004D05D2 /* OutputView.swift in Sources */,
 				CCCCCF58271E9E14004D05D2 /* TnornApp.swift in Sources */,
+				CCCCCF8F271FEB4B004D05D2 /* TestView.swift in Sources */,
 				CCCCCF7A271EA6F5004D05D2 /* TimeTable.intentdefinition in Sources */,
 				CCCCCF5A271E9E14004D05D2 /* ContentView.swift in Sources */,
 			);
@@ -301,6 +326,11 @@
 				CCCCCF5D271E9E14004D05D2 /* Persistence.swift in Sources */,
 				CCCCCF59271E9E14004D05D2 /* TnornApp.swift in Sources */,
 				CCCCCF5B271E9E14004D05D2 /* ContentView.swift in Sources */,
+				CCCCCF90271FEB4B004D05D2 /* TestView.swift in Sources */,
+				CCA6661C272FE7F60085B172 /* AddPreset.swift in Sources */,
+				CCCCCF8D271FD12E004D05D2 /* CustomVIew.swift in Sources */,
+				CCCCCF87271FCB4D004D05D2 /* OutputView.swift in Sources */,
+				CCCCCF8A271FD082004D05D2 /* AddTimeTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +534,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -532,6 +563,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
