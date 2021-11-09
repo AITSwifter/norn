@@ -8,11 +8,11 @@
 import SwiftUI
 import CoreData
 
-enum display{
-    case output
-    case addtable
-    case addpreset
+enum TabType: Int {
+    case timetable
+    case mytimetable
 }
+
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -21,47 +21,53 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Timetable.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Timetable>
-
-    var body: some View {
-        NavigationView {
-            VStack{
-                Text(String(items.count))
-                List {
-                    ForEach(items) { item in
-                        NavigationLink(destination: OutputView()) {
-                            HStack{
-                                Text(item.name ?? "Item")
-                                Text("to \(item.direction ?? "out")" )
-                                Text(item.timestamp!, formatter: itemFormatter)
-                            }
-                            
-                        }
-                    }
-                    .onDelete(perform: deleteItems)
-                }
-                .toolbar {
-    #if os(iOS)
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        EditButton()
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: AddPreset()){
-                            Label("Add preset", systemImage: "plus")
-                        }
-                    }
-    #endif
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: AddTimeTable()){
-                            Label("Add Item", systemImage: "plus").foregroundColor(.red)
-                        }
-                    }
-                    
-                    
-                }
-                Text("Select an item")
-            }
-
+    @State private var selection: TabType = .timetable
+    @State private var chageview = AddTimeTable()
+    
+    @ViewBuilder func returnview() -> some View{
+        
+        switch selection {
+        case .timetable:
+            AddTimeTable()
+        case .mytimetable:
+            AddPreset()
         }
+    }
+    
+    var body: some View {
+        NavigationView{
+            ZStack{
+                GeometryReader { geometry in
+                    NavigationView {
+                        VStack(spacing: .zero) {
+                            UpperTabView(selection: $selection,
+                                         geometrySize: geometry.size)
+                            if selection == .timetable {
+                                TableTabView()
+                            } else{
+                                MyTableTabView()
+                            }
+                        }
+                    }
+                }
+                VStack{
+                    Spacer()
+                    HStack{
+                        Spacer()
+                        NavigationLink("＋", destination: returnview())
+                                        .font(.system(size: 30))
+                                        .frame(width: 50, height: 50)
+                                        .background(Color.red)
+                                        .clipShape(Circle())
+                                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 16.0, trailing: 16.0))
+                                        .foregroundColor(.white)
+                    }
+                }
+            }
+        }
+        .navigationBarTitle("norn",
+                            displayMode: .inline)
+        
     }
 
     private func addItem() {
