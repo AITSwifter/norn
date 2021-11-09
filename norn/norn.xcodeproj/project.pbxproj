@@ -7,19 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC4BA54427184BC3002CA990 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4BA54327184BC3002CA990 /* CustomView.swift */; };
+		CC54AAFF2715A6DD001B6157 /* InputTimeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC54AAFE2715A6DD001B6157 /* InputTimeTableView.swift */; };
+		CC54AB012715B3C8001B6157 /* InputMyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC54AB002715B3C8001B6157 /* InputMyTableView.swift */; };
 		CC8307FF270C514E00CFA1CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8307FE270C514E00CFA1CA /* AppDelegate.swift */; };
 		CC830801270C514E00CFA1CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC830800270C514E00CFA1CA /* SceneDelegate.swift */; };
 		CC830803270C514E00CFA1CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC830802270C514E00CFA1CA /* ContentView.swift */; };
 		CC830806270C514E00CFA1CA /* norn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC830804270C514E00CFA1CA /* norn.xcdatamodeld */; };
 		CC830808270C514F00CFA1CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC830807270C514F00CFA1CA /* Assets.xcassets */; };
-		CC83080B270C514F00CFA1CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC83080A270C514F00CFA1CA /* Preview Assets.xcassets */; };
 		CC83080E270C514F00CFA1CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC83080C270C514F00CFA1CA /* LaunchScreen.storyboard */; };
 		CC83081C270C53F900CFA1CA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC83081B270C53F900CFA1CA /* WidgetKit.framework */; };
 		CC83081E270C53F900CFA1CA /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC83081D270C53F900CFA1CA /* SwiftUI.framework */; };
-		CC830821270C53F900CFA1CA /* Timeview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC830820270C53F900CFA1CA /* Timeview.swift */; };
-		CC830824270C53FA00CFA1CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC830823270C53FA00CFA1CA /* Assets.xcassets */; };
-		CC830826270C53FA00CFA1CA /* Timeview.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CC830822270C53F900CFA1CA /* Timeview.intentdefinition */; };
-		CC830827270C53FA00CFA1CA /* Timeview.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CC830822270C53F900CFA1CA /* Timeview.intentdefinition */; };
 		CC83082A270C53FA00CFA1CA /* TimeviewExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CC830819270C53F900CFA1CA /* TimeviewExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -48,22 +46,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CC4BA54327184BC3002CA990 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		CC54AAFE2715A6DD001B6157 /* InputTimeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTimeTableView.swift; sourceTree = "<group>"; };
+		CC54AB002715B3C8001B6157 /* InputMyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMyTableView.swift; sourceTree = "<group>"; };
 		CC8307FB270C514E00CFA1CA /* norn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = norn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC8307FE270C514E00CFA1CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC830800270C514E00CFA1CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CC830802270C514E00CFA1CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CC830805270C514E00CFA1CA /* norn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = norn.xcdatamodel; sourceTree = "<group>"; };
 		CC830807270C514F00CFA1CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CC83080A270C514F00CFA1CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CC83080D270C514F00CFA1CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC83080F270C514F00CFA1CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC830819270C53F900CFA1CA /* TimeviewExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimeviewExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC83081B270C53F900CFA1CA /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CC83081D270C53F900CFA1CA /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		CC830820270C53F900CFA1CA /* Timeview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeview.swift; sourceTree = "<group>"; };
-		CC830822270C53F900CFA1CA /* Timeview.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Timeview.intentdefinition; sourceTree = "<group>"; };
-		CC830823270C53FA00CFA1CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CC830825270C53FA00CFA1CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				CC8307FD270C514E00CFA1CA /* norn */,
-				CC83081F270C53F900CFA1CA /* Timeview */,
 				CC83081A270C53F900CFA1CA /* Frameworks */,
 				CC8307FC270C514E00CFA1CA /* Products */,
 			);
@@ -111,6 +106,9 @@
 				CC8307FE270C514E00CFA1CA /* AppDelegate.swift */,
 				CC830800270C514E00CFA1CA /* SceneDelegate.swift */,
 				CC830802270C514E00CFA1CA /* ContentView.swift */,
+				CC54AAFE2715A6DD001B6157 /* InputTimeTableView.swift */,
+				CC54AB002715B3C8001B6157 /* InputMyTableView.swift */,
+				CC4BA54327184BC3002CA990 /* CustomView.swift */,
 				CC830807270C514F00CFA1CA /* Assets.xcassets */,
 				CC83080C270C514F00CFA1CA /* LaunchScreen.storyboard */,
 				CC83080F270C514F00CFA1CA /* Info.plist */,
@@ -123,7 +121,6 @@
 		CC830809270C514F00CFA1CA /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				CC83080A270C514F00CFA1CA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -135,17 +132,6 @@
 				CC83081D270C53F900CFA1CA /* SwiftUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CC83081F270C53F900CFA1CA /* Timeview */ = {
-			isa = PBXGroup;
-			children = (
-				CC830820270C53F900CFA1CA /* Timeview.swift */,
-				CC830822270C53F900CFA1CA /* Timeview.intentdefinition */,
-				CC830823270C53FA00CFA1CA /* Assets.xcassets */,
-				CC830825270C53FA00CFA1CA /* Info.plist */,
-			);
-			path = Timeview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +215,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC83080E270C514F00CFA1CA /* LaunchScreen.storyboard in Resources */,
-				CC83080B270C514F00CFA1CA /* Preview Assets.xcassets in Resources */,
 				CC830808270C514F00CFA1CA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,7 +223,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC830824270C53FA00CFA1CA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,11 +233,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC54AAFF2715A6DD001B6157 /* InputTimeTableView.swift in Sources */,
+				CC4BA54427184BC3002CA990 /* CustomView.swift in Sources */,
 				CC8307FF270C514E00CFA1CA /* AppDelegate.swift in Sources */,
 				CC830801270C514E00CFA1CA /* SceneDelegate.swift in Sources */,
 				CC830806270C514E00CFA1CA /* norn.xcdatamodeld in Sources */,
-				CC830827270C53FA00CFA1CA /* Timeview.intentdefinition in Sources */,
 				CC830803270C514E00CFA1CA /* ContentView.swift in Sources */,
+				CC54AB012715B3C8001B6157 /* InputMyTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,8 +247,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC830826270C53FA00CFA1CA /* Timeview.intentdefinition in Sources */,
-				CC830821270C53F900CFA1CA /* Timeview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +391,6 @@
 		CC830813270C514F00CFA1CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -429,7 +412,6 @@
 		CC830814270C514F00CFA1CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
