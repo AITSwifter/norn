@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5A34140273A49D70031B879 /* ContentPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A3413F273A49D70031B879 /* ContentPageView.swift */; };
+		C5A34141273A49D70031B879 /* ContentPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A3413F273A49D70031B879 /* ContentPageView.swift */; };
+		C5A34143273A4A890031B879 /* UpperTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A34142273A4A890031B879 /* UpperTabView.swift */; };
+		C5A34144273A4A890031B879 /* UpperTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A34142273A4A890031B879 /* UpperTabView.swift */; };
 		CCA6661B272FE7F60085B172 /* AddPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA6661A272FE7F60085B172 /* AddPreset.swift */; };
 		CCA6661C272FE7F60085B172 /* AddPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA6661A272FE7F60085B172 /* AddPreset.swift */; };
 		CCCCCF56271E9E14004D05D2 /* Tnorn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF43271E9E12004D05D2 /* Tnorn.xcdatamodeld */; };
@@ -61,6 +65,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C5A3413F273A49D70031B879 /* ContentPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentPageView.swift; path = ../../../../Practice/Tab/Tab/ContentPageView.swift; sourceTree = "<group>"; };
+		C5A34142273A4A890031B879 /* UpperTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpperTabView.swift; path = ../../../../Practice/Tab/Tab/UpperTabView.swift; sourceTree = "<group>"; };
 		CCA6661A272FE7F60085B172 /* AddPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPreset.swift; sourceTree = "<group>"; };
 		CCCCCF44271E9E12004D05D2 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		CCCCCF45271E9E12004D05D2 /* TnornApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TnornApp.swift; sourceTree = "<group>"; };
@@ -131,6 +137,8 @@
 				CCCCCF47271E9E12004D05D2 /* Persistence.swift */,
 				CCCCCF8B271FD12E004D05D2 /* CustomVIew.swift */,
 				CCCCCF8E271FEB4B004D05D2 /* TestView.swift */,
+				C5A3413F273A49D70031B879 /* ContentPageView.swift */,
+				C5A34142273A4A890031B879 /* UpperTabView.swift */,
 				CCCCCF48271E9E14004D05D2 /* Assets.xcassets */,
 				CCCCCF43271E9E12004D05D2 /* Tnorn.xcdatamodeld */,
 				CCA6661A272FE7F60085B172 /* AddPreset.swift */,
@@ -312,7 +320,9 @@
 				CCA6661B272FE7F60085B172 /* AddPreset.swift in Sources */,
 				CCCCCF86271FCB4D004D05D2 /* OutputView.swift in Sources */,
 				CCCCCF58271E9E14004D05D2 /* TnornApp.swift in Sources */,
+				C5A34143273A4A890031B879 /* UpperTabView.swift in Sources */,
 				CCCCCF8F271FEB4B004D05D2 /* TestView.swift in Sources */,
+				C5A34140273A49D70031B879 /* ContentPageView.swift in Sources */,
 				CCCCCF7A271EA6F5004D05D2 /* TimeTable.intentdefinition in Sources */,
 				CCCCCF5A271E9E14004D05D2 /* ContentView.swift in Sources */,
 			);
@@ -322,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A34144273A4A890031B879 /* UpperTabView.swift in Sources */,
 				CCCCCF57271E9E14004D05D2 /* Tnorn.xcdatamodeld in Sources */,
 				CCCCCF5D271E9E14004D05D2 /* Persistence.swift in Sources */,
 				CCCCCF59271E9E14004D05D2 /* TnornApp.swift in Sources */,
@@ -329,6 +340,7 @@
 				CCCCCF90271FEB4B004D05D2 /* TestView.swift in Sources */,
 				CCA6661C272FE7F60085B172 /* AddPreset.swift in Sources */,
 				CCCCCF8D271FD12E004D05D2 /* CustomVIew.swift in Sources */,
+				C5A34141273A49D70031B879 /* ContentPageView.swift in Sources */,
 				CCCCCF87271FCB4D004D05D2 /* OutputView.swift in Sources */,
 				CCCCCF8A271FD082004D05D2 /* AddTimeTable.swift in Sources */,
 			);
