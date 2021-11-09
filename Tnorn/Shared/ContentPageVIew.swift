@@ -1,8 +1,8 @@
 //
 //  ContentPageView.swift
-//  Tab
+//  Tnorn
 //
-//  Created by k20028kk on 2021/10/19.
+//  Created by nissy on 2021/11/09.
 //
 
 import SwiftUI
@@ -64,21 +64,7 @@ struct TableTabView: View {
                         self.names.remove(atOffsets: offsets)
                     }
                 }
-                VStack{
-                    Spacer()
-                    HStack{
-                        Spacer()
-                        NavigationLink("＋", destination: AddTimeTable())
-                                        .font(.system(size: 30))
-                                        .frame(width: 50, height: 50)
-                                        .background(Color.red)
-                                        .clipShape(Circle())
-                                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 16.0, trailing: 16.0))
-                                        .foregroundColor(.white)
-                    }
-                }
             }
-            
         }
     }
 }
@@ -202,5 +188,3 @@ struct DetailView2: View {
         }
     }
 }
-
-

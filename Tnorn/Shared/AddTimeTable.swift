@@ -127,6 +127,7 @@ struct AddTimeTable: View {
                 playerPicker(Ttime: $Ttime[Ttimenum])
             }
         }
+        .navigationBarTitle("プリセット入力画面",displayMode: .inline)
     }
     
     func savetable(text: String,direction: String, num: [[Int]], ordinal: Bool,saturday: Bool, holiday: Bool){

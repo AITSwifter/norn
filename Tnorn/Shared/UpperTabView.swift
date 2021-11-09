@@ -1,8 +1,8 @@
 //
 //  UpperTabView.swift
-//  Tab
+//  Tnorn
 //
-//  Created by k20028kk on 2021/10/19.
+//  Created by nissy on 2021/11/09.
 //
 
 import SwiftUI
@@ -20,6 +20,7 @@ struct UpperTabView: View {
                 }, label: {
                     Text("時刻表")
                         .font(.headline)
+                        
                 })
                 .frame(width: geometrySize.width / 2, height: 44.0)
                 Button(action: {
@@ -36,4 +37,3 @@ struct UpperTabView: View {
         }
     }
 }
-

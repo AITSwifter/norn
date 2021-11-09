@@ -16,7 +16,7 @@ enum TabType: Int {
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Timetable.timestamp, ascending: true)],
         animation: .default)
@@ -48,33 +48,33 @@ struct ContentView: View {
                                 MyTableTabView()
                             }
                         }
+                        .navigationBarHidden(true)
                     }
+                    
                 }
                 VStack{
                     Spacer()
                     HStack{
                         Spacer()
                         NavigationLink("＋", destination: returnview())
-                                        .font(.system(size: 30))
-                                        .frame(width: 50, height: 50)
-                                        .background(Color.red)
-                                        .clipShape(Circle())
-                                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 16.0, trailing: 16.0))
-                                        .foregroundColor(.white)
+                            .font(.system(size: 30))
+                            .frame(width: 50, height: 50)
+                            .background(Color.red)
+                            .clipShape(Circle())
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 16.0, trailing: 16.0))
+                            .foregroundColor(.white)
                     }
                 }
+                .navigationBarHidden(true)
             }
         }
-        .navigationBarTitle("norn",
-                            displayMode: .inline)
-        
     }
-
+    
     private func addItem() {
         withAnimation {
             let newItem = Timetable(context: viewContext)
             newItem.timestamp = Date()
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -85,11 +85,11 @@ struct ContentView: View {
             }
         }
     }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
             } catch {

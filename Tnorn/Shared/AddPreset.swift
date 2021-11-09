@@ -168,7 +168,7 @@ struct AddPreset: View {
         newpreset.name = name
         newpreset.start = start
         newpreset.end = end
-        newpreset.timetable = Date()
+        newpreset.timestamp = Date()
         do {
             try context.save()
         } catch {

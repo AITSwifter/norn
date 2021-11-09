@@ -4,7 +4,7 @@
         <attribute name="end" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="start" optional="YES" attributeType="String"/>
-        <attribute name="timetable" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="Timetable" representedClassName="Timetable" syncable="YES" codeGenerationType="class">
         <attribute name="direction" optional="YES" attributeType="String"/>
