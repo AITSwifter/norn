@@ -12,10 +12,15 @@ struct playerPicker: View {
     
     @Binding  var Ttime: [Int]
     @State var selectminute = 0
+    @State var isalert = false
+    
+    var ischeckdup: Bool{
+        return Ttime.firstIndex(of: selectminute) == nil
+    }
     
     var body: some View {
-        VStack(){
-            HStack(){
+        VStack{
+            HStack{
                 //ユーザが入力するピッカー
                 Picker("分を入力" , selection: $selectminute){
                     ForEach(0..<60) { num in
@@ -23,9 +28,21 @@ struct playerPicker: View {
                     }
                 }
             }
-            Button("完了"){
-                Ttime.append(selectminute)
-                self.presentationMode.wrappedValue.dismiss()
+            HStack{
+                Button("戻る"){
+                    self.presentationMode.wrappedValue.dismiss()
+                }
+                Button("完了"){
+                    if ischeckdup{
+                        Ttime.append(selectminute)
+                        self.presentationMode.wrappedValue.dismiss()
+                    } else{
+                        isalert = true
+                    }
+                }
+                .alert(isPresented: $isalert){
+                    Alert(title: Text("その時間はすでに入力済みです"))
+                }
             }
         }
     }

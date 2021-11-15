@@ -13,12 +13,22 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
+        let stations = [["八草","高蔵寺"],["藤が丘","高畑"]]
+        for station in stations {
             let newTimetable = Timetable(context: viewContext)
             newTimetable.timestamp = Date()
-            newTimetable.name = "a"
-            newTimetable.direction = "b"
-            
+            newTimetable.name = station[0]
+            newTimetable.direction = station[1]
+
+        }
+        
+        let presets = [["行き道","八草","藤が丘"],["帰り道","藤が丘","八草"]]
+        for preset in presets {
+            let newPreset = Preset(context: viewContext)
+            newPreset.name = preset[0]
+            newPreset.start = preset[1]
+            newPreset.end = preset[2]
+            newPreset.timestamp = Date()
         }
         do {
             try viewContext.save()

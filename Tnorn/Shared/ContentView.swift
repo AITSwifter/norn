@@ -10,26 +10,22 @@ import CoreData
 
 enum TabType: Int {
     case timetable
-    case mytimetable
+    case preset
 }
 
 
 struct ContentView: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
     
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Timetable.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Timetable>
     @State private var selection: TabType = .timetable
-    @State private var chageview = AddTimeTable()
-    
+        
     @ViewBuilder func returnview() -> some View{
         
         switch selection {
         case .timetable:
             AddTimeTable()
-        case .mytimetable:
+        case .preset:
             AddPreset()
         }
     }
@@ -45,12 +41,12 @@ struct ContentView: View {
                             if selection == .timetable {
                                 TableTabView()
                             } else{
-                                MyTableTabView()
+                                PresetTabView()
                             }
                         }
                         .navigationBarHidden(true)
                     }
-                    
+
                 }
                 VStack{
                     Spacer()
@@ -66,37 +62,6 @@ struct ContentView: View {
                     }
                 }
                 .navigationBarHidden(true)
-            }
-        }
-    }
-    
-    private func addItem() {
-        withAnimation {
-            let newItem = Timetable(context: viewContext)
-            newItem.timestamp = Date()
-            
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-    
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-            
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }

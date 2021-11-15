@@ -2,24 +2,14 @@
 //  TestView.swift
 //  Tnorn
 //
-//  Created by nissy on 2021/10/20.
+//  Created by nissy on 2021/11/10.
 //
 
 import SwiftUI
 
 struct TestView: View {
-    @State var showingTextField = false
-    @State var text = ""
-    
     var body: some View {
-        return VStack {
-            if showingTextField {
-                TextField("入力してください", text: $text)
-            }
-            Button(action: { self.showingTextField.toggle() }) {
-                Text ("Show")
-            }
-        }
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 

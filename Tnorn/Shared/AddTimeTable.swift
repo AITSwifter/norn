@@ -37,8 +37,12 @@ struct AddTimeTable: View {
         return !ordinaly && !saturday && !holiday
     }
     
-    var TtimeEcount: Int{
-        return Ttime[Ttimenum].count
+    var checkiscount: Bool{
+        var count = 0
+        for times in Ttime{
+            count += times.count
+        }
+        return count == 0
     }
     
     var body: some View {
@@ -102,6 +106,9 @@ struct AddTimeTable: View {
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(Color.blue, lineWidth: 2))
+                            .sheet(isPresented: $showtimepicker){
+                                playerPicker(Ttime: $Ttime[Ttimenum])
+                            }
                         }
                     }
                 }
@@ -112,7 +119,7 @@ struct AddTimeTable: View {
                                     }){
                     Text("保存")
                 }
-                .disabled(!textisVoid || checkisVoid)
+                .disabled(!textisVoid || checkisVoid || checkiscount)
                 .alert(isPresented: $showingAlert){
                     Alert(title: Text("保存"),
                           message: Text("\(name)を保存しました"),
@@ -123,27 +130,17 @@ struct AddTimeTable: View {
                 }
                 .padding()
             }
-            .sheet(isPresented: $showtimepicker){
-                playerPicker(Ttime: $Ttime[Ttimenum])
-            }
+            
         }
-        .navigationBarTitle("プリセット入力画面",displayMode: .inline)
+        .navigationBarTitle("時刻表入力画面",displayMode: .inline)
     }
     
     func savetable(text: String,direction: String, num: [[Int]], ordinal: Bool,saturday: Bool, holiday: Bool){
         /// 時刻表新規登録処理
         let newTtable = Timetable(context: context)
         newTtable.name = text
+        newTtable.direction = direction
         newTtable.timestamp = Date()
-//        if ordinal {
-//            newTtable.ordinarytable = Int16(num[0][0])
-//        }
-//        if saturday {
-//            newTtable.saturdaytable = Int16(num[0][0])
-//        }
-//        if ordinal {
-//            newTtable.holitable = Int16(num[0][0])
-//        }
         try? context.save()
     }
     
