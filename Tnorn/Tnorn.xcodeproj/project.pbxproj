@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC053D0D273B958F00A239E4 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC053D0C273B958F00A239E4 /* TestView.swift */; };
+		CC053D0E273B958F00A239E4 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC053D0C273B958F00A239E4 /* TestView.swift */; };
 		CC9145EB273A54330031E064 /* UpperTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9145EA273A54330031E064 /* UpperTabView.swift */; };
 		CC9145EC273A54330031E064 /* UpperTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9145EA273A54330031E064 /* UpperTabView.swift */; };
 		CC9145F1273A554B0031E064 /* ContentPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9145F0273A554B0031E064 /* ContentPageView.swift */; };
@@ -36,8 +38,6 @@
 		CCCCCF8A271FD082004D05D2 /* AddTimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF88271FD082004D05D2 /* AddTimeTable.swift */; };
 		CCCCCF8C271FD12E004D05D2 /* CustomVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF8B271FD12E004D05D2 /* CustomVIew.swift */; };
 		CCCCCF8D271FD12E004D05D2 /* CustomVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF8B271FD12E004D05D2 /* CustomVIew.swift */; };
-		CCCCCF8F271FEB4B004D05D2 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF8E271FEB4B004D05D2 /* TestView.swift */; };
-		CCCCCF90271FEB4B004D05D2 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF8E271FEB4B004D05D2 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CC053D0C273B958F00A239E4 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		CC9145EA273A54330031E064 /* UpperTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperTabView.swift; sourceTree = "<group>"; };
 		CC9145F0273A554B0031E064 /* ContentPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPageView.swift; sourceTree = "<group>"; };
 		CCA6661A272FE7F60085B172 /* AddPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPreset.swift; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		CCCCCF85271FCB4D004D05D2 /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
 		CCCCCF88271FD082004D05D2 /* AddTimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimeTable.swift; sourceTree = "<group>"; };
 		CCCCCF8B271FD12E004D05D2 /* CustomVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVIew.swift; sourceTree = "<group>"; };
-		CCCCCF8E271FEB4B004D05D2 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,11 +137,11 @@
 				CCCCCF85271FCB4D004D05D2 /* OutputView.swift */,
 				CCCCCF47271E9E12004D05D2 /* Persistence.swift */,
 				CCCCCF8B271FD12E004D05D2 /* CustomVIew.swift */,
-				CCCCCF8E271FEB4B004D05D2 /* TestView.swift */,
 				CCCCCF48271E9E14004D05D2 /* Assets.xcassets */,
 				CC9145F0273A554B0031E064 /* ContentPageView.swift */,
 				CCCCCF43271E9E12004D05D2 /* Tnorn.xcdatamodeld */,
 				CCA6661A272FE7F60085B172 /* AddPreset.swift */,
+				CC053D0C273B958F00A239E4 /* TestView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -313,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC053D0D273B958F00A239E4 /* TestView.swift in Sources */,
 				CC9145EB273A54330031E064 /* UpperTabView.swift in Sources */,
 				CCCCCF89271FD082004D05D2 /* AddTimeTable.swift in Sources */,
 				CCCCCF8C271FD12E004D05D2 /* CustomVIew.swift in Sources */,
@@ -322,7 +323,6 @@
 				CCA6661B272FE7F60085B172 /* AddPreset.swift in Sources */,
 				CCCCCF86271FCB4D004D05D2 /* OutputView.swift in Sources */,
 				CCCCCF58271E9E14004D05D2 /* TnornApp.swift in Sources */,
-				CCCCCF8F271FEB4B004D05D2 /* TestView.swift in Sources */,
 				CCCCCF7A271EA6F5004D05D2 /* TimeTable.intentdefinition in Sources */,
 				CCCCCF5A271E9E14004D05D2 /* ContentView.swift in Sources */,
 			);
@@ -334,10 +334,10 @@
 			files = (
 				CCCCCF57271E9E14004D05D2 /* Tnorn.xcdatamodeld in Sources */,
 				CCCCCF5D271E9E14004D05D2 /* Persistence.swift in Sources */,
+				CC053D0E273B958F00A239E4 /* TestView.swift in Sources */,
 				CCCCCF59271E9E14004D05D2 /* TnornApp.swift in Sources */,
 				CC9145EC273A54330031E064 /* UpperTabView.swift in Sources */,
 				CCCCCF5B271E9E14004D05D2 /* ContentView.swift in Sources */,
-				CCCCCF90271FEB4B004D05D2 /* TestView.swift in Sources */,
 				CCA6661C272FE7F60085B172 /* AddPreset.swift in Sources */,
 				CCCCCF8D271FD12E004D05D2 /* CustomVIew.swift in Sources */,
 				CC9145F2273A554B0031E064 /* ContentPageView.swift in Sources */,

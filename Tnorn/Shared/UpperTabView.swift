@@ -23,8 +23,9 @@ struct UpperTabView: View {
                         
                 })
                 .frame(width: geometrySize.width / 2, height: 44.0)
+                
                 Button(action: {
-                    self.selection = .mytimetable
+                    self.selection = .preset
                 }, label: {
                     Text("プリセット")
                         .font(.headline)

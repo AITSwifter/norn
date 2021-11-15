@@ -16,11 +16,15 @@ struct AddPreset: View {
     @State private var nameeditting = false
     @State private var start = ""
     @State private var starteditting = false
+    @State private var sdirect = ""
+    @State private var sdirecteditting = false
     @State private var end = ""
     @State private var endeditting = false
+    @State private var edirect = ""
+    @State private var edirecteditting = false
     @State private var midd: [String] = ["1"]
     @State private var mideditting: [Bool] = [false]
-    @State private var needtime: [Int16] = [0]
+    @State private var needtime: [Int] = [0]
     @State private var neededitting: [Bool] = [false]
     @State private var showingAlert = false
     
@@ -54,9 +58,13 @@ struct AddPreset: View {
                 
                 ScrollView{
                     VStack{
-                        //出発駅名の入力欄
-                        CustomTextField(iseditting: self.$starteditting, variable: $start, text: "出発駅名")
-                        
+                        HStack{
+                            //出発駅名の入力欄
+                            CustomTextField(iseditting: self.$starteditting, variable: $start, text: "出発駅名")
+                            CustomTextField(iseditting: self.$sdirecteditting, variable: $sdirect, text: "方面")
+
+                        }
+                                                
                         HStack{
                             Text("↓")
                                 .padding()
@@ -116,7 +124,12 @@ struct AddPreset: View {
                             
                         }
                         //到着駅名の入力欄
-                        CustomTextField(iseditting: self.$endeditting, variable: $end, text: "到着駅名")
+                        HStack{
+                            CustomTextField(iseditting: self.$endeditting, variable: $end, text: "到着駅名")
+                            CustomTextField(iseditting: self.$edirecteditting, variable: $edirect, text: "方面")
+
+                        }
+                        
                         
                         
                     }
@@ -143,7 +156,7 @@ struct AddPreset: View {
                 }
                 Button("保存",action: {
                     self.showingAlert = true
-                    Savepreset(name: name, start: start, end: end)
+                    Savepreset(name: name, start: start, sdirect: sdirect, end: end, edirect: edirect)
                     
                 })
                 .disabled(!textisVoid)
@@ -163,11 +176,13 @@ struct AddPreset: View {
         .navigationBarTitle("プリセット入力画面",displayMode: .inline)
     }
     
-    func Savepreset(name: String, start: String, end: String){
+    func Savepreset(name: String, start: String, sdirect: String, end: String, edirect: String){
         let newpreset = Preset(context: context)
         newpreset.name = name
         newpreset.start = start
+        newpreset.sdirect = sdirect
         newpreset.end = end
+        newpreset.edirect = edirect
         newpreset.timestamp = Date()
         do {
             try context.save()

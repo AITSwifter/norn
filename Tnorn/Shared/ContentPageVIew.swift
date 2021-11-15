@@ -14,77 +14,77 @@ struct ContentPageView: View {
     var body: some View{
         TabView(selection: $selection){
             TableTabView().tag(TabType.timetable)
-            MyTableTabView().tag(TabType.mytimetable)
+            PresetTabView().tag(TabType.preset)
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
 }
 
 //時刻表
-extension String: Identifiable {
-    public var id: String { self }
+extension Int: Identifiable {
+    public var id: Int { self }
 }
 
 struct TableTabView: View {
-    @State var names = ["八草","高蔵寺","新豊田"]
-    @State var aa = [test]()
+    @Environment(\.managedObjectContext) private var Context
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Timetable.timestamp, ascending: true)],
+        animation: .default)
+    private var items: FetchedResults<Timetable>
+    
     @State var Ttime1 = [[11,12],[11,12],[11,12],[11,12],[11,12],[5,11,12],[11,12],[11,12],[11,12],[12,13],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12]]
     @State var Ttime2 = [[1,2],[11,12],[11,12],[11,12],[11,12],[5,11,12],[11,12],[11,12],[11,12],[12,13],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12]]
-    @State private var selectname: String? = nil
-    
-    func bb(nameee:String) -> [[Int]]{
-        
-        if nameee == names[0]{
-            return self.Ttime1
-        }
-        if nameee == names[1]{
-            return self.Ttime2
-        }
-        return [[1]]
-    }
+    @State private var select: Timetable? = nil
     
     var body: some View{
         NavigationView{
-            ZStack{
-                List{
-                    ForEach(names, id: \.self) { user in
-                        HStack{
-                            Text(user)
-                            Spacer()
-                        }
-                        .contentShape(Rectangle())
-                        .onTapGesture{
-                            self.selectname = user
-                        }
-                        .sheet(item: self.$selectname, content: { selectname in
-                            DetailView(Ttime: bb(nameee:selectname),name:selectname)
-                        })
-                        //データ削除
-                    }.onDelete { offsets in
-                        self.names.remove(atOffsets: offsets)
+            
+            List{
+                ForEach(items) { item in
+                    HStack{
+                        Text(item.name ?? "noname")
+                        Spacer()
+                        Text(item.direction ?? "nodirection")
                     }
-                }
+                    .contentShape(Rectangle())
+                    .onTapGesture{
+                        self.select = item
+                    }
+                    .sheet(item: self.$select, content: { select in
+                        DetailView(Ttime: Ttime1,name:select.name ?? "nodata",direct: select.direction ?? "nodata")
+                    })
+                }.onDelete(perform: delettimetable)
+                
+                
             }
+            
         }
     }
-}
-
-struct test {
-    var name:String
-    var aaa:[[Int]]
-    init(name:String,aaa:[[Int]]){
-        self.name=name
-        self.aaa=aaa
+    private func delettimetable(at offsets: IndexSet){
+        for index in offsets {
+            let putitem = items[index]
+            Context.delete(putitem)
+        }
+        try? Context.save
     }
 }
 
 
 //時刻表プレビュー
 struct DetailView: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var Ttime:[[Int]]
     @State var name:String
+    @State var direct:String
     var body: some View {
-        Text(name)
+        HStack{
+            Text(name)
+            Text(direct)
+        }
+        
         List{
             ForEach(5..<25) { hour in
                 HStack{
@@ -103,71 +103,67 @@ struct DetailView: View {
                 }
             }
         }
+        Button("閉じる"){
+            self.presentationMode.wrappedValue.dismiss()
+        }
     }
-}
-
-
-
-struct test2 {
-    var data:String
-    var ccc:[String]
-    init(data:String,ccc:[String]){
-        self.data=data
-        self.ccc=ccc
-    }
-    
 }
 
 
 //プリセット
-struct MyTableTabView: View {
-    @State var datas = ["通学","通勤","帰宅"]
-    @State private var selectnamee: String? = nil
+
+extension String: Identifiable {
+    public var id: String { self }
+}
+
+struct PresetTabView: View {
+    @Environment(\.managedObjectContext) private var Context
     
-    @State var ee = [test2]()
-    @State var Tdata1 = ["八草","10","新豊田","岡崎"]//[出発,時間,中間,到着]
-    @State var Tdata2 = ["岡崎","30","新豊田","八草"]//[出発,時間,中間,到着]
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Timetable.timestamp, ascending: true)],
+        animation: .default)
+    private var items: FetchedResults<Preset>
     
-    
-    func cc(dataaa:String) -> [String]{
-        
-        if dataaa == datas[0]{
-            return self.Tdata1
-        }
-        if dataaa == datas[1]{
-            return self.Tdata2
-        }
-        return [""]
-    }
-    
+    @State private var select: Preset? = nil
+
+//    @State var datas = ["通学","通勤","帰宅"]
+//    @State var Tdata1 = ["八草","新豊田","岡崎"]//[出発,中間,到着]
+    @State var Ttime1 = [10,20]
+//    @State var Tdata2 = ["岡崎","新豊田","八草"]//[出発,時間,中間,到着]
+    @State var Ttime2 = [30,20]
     
     var body: some View{
         NavigationView{
             ZStack{
                 List{
-                    ForEach(datas, id: \.self) { user in
+                    ForEach(items) { item in
                         HStack{
-                            Text(user)
+                            Text(item.name ?? "nodata")
                             Spacer()
                         }
                         .contentShape(Rectangle())
                         .onTapGesture{
-                            self.selectnamee = user
+                            self.select = item
                             
                         }
                         
-                        .sheet(item: self.$selectnamee, content: { selectnamee in
-                            DetailView2(Tdata: cc(dataaa:selectnamee),data:selectnamee)
+                        .sheet(item: self.$select, content: { select in
+                            DetailView2(Tdata: [select.start!,"長久手",select.end!],Ttime: Ttime1,name:select.name ?? "nodata")
                             
                         })
-                    }.onDelete { offsets in
-                        self.datas.remove(atOffsets: offsets)
-                    }
+                    }.onDelete(perform: deletepreset)
                 }
                 
             }
             
         }
+    }
+    private func deletepreset(at offsets: IndexSet){
+        for index in offsets {
+            let putitem = items[index]
+            Context.delete(putitem)
+        }
+        try? Context.save
     }
 }
 
@@ -175,16 +171,43 @@ struct MyTableTabView: View {
 //プリセットプレビュー
 struct DetailView2: View {
     
-    @State var Tdata:[String]
-    @State var data:String
+    @Environment(\.presentationMode) var presentationMode
+    
+    @State var Tdata: [String]
+    @State var Ttime: [Int]
+    @State var name: String
+    
     var body: some View {
-        Text(data)
-        List{
-            ForEach(Tdata, id: \.self) { data in
-                Text(String(data))
-                
+        
+        VStack{
+            Text(name)
+            ScrollView{
+                VStack{
+                    HStack{
+                        Text(Tdata[0])
+                            .font(.title)
+                    }
+                    ForEach(0..<Ttime.count){ index in
+                        HStack{
+                            Text("↓")
+                            Text("所要時間")
+                            Text(String(Ttime[index]))
+                            Text("分")
+                            
+                        }
+                        .padding()
+                        Text(Tdata[index+1])
+                            .font(.title)
+
+                    }
+                }
             }
-            
+            .padding()
         }
+        
+        Button("閉じる"){
+            self.presentationMode.wrappedValue.dismiss()
+        }
+
     }
 }
