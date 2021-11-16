@@ -103,9 +103,12 @@ struct DetailView: View {
                 }
             }
         }
-        Button("閉じる"){
-            self.presentationMode.wrappedValue.dismiss()
+        HStack{
+            Button("閉じる"){
+                self.presentationMode.wrappedValue.dismiss()
+            }
         }
+        
     }
 }
 
@@ -204,10 +207,12 @@ struct DetailView2: View {
             }
             .padding()
         }
-        
-        Button("閉じる"){
-            self.presentationMode.wrappedValue.dismiss()
+        HStack{
+            Button("閉じる"){
+                self.presentationMode.wrappedValue.dismiss()
+            }
         }
+        
 
     }
 }

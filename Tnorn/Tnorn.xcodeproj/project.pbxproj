@@ -66,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		CC053D0C273B958F00A239E4 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		CC492ADB2743897F0023787F /* TimeTableExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimeTableExtension.entitlements; sourceTree = "<group>"; };
 		CC9145EA273A54330031E064 /* UpperTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperTabView.swift; sourceTree = "<group>"; };
 		CC9145F0273A554B0031E064 /* ContentPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPageView.swift; sourceTree = "<group>"; };
 		CCA6661A272FE7F60085B172 /* AddPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPreset.swift; sourceTree = "<group>"; };
@@ -119,6 +120,7 @@
 		CCCCCF3D271E9E12004D05D2 = {
 			isa = PBXGroup;
 			children = (
+				CC492ADB2743897F0023787F /* TimeTableExtension.entitlements */,
 				CCCCCF42271E9E12004D05D2 /* Shared */,
 				CCCCCF54271E9E14004D05D2 /* macOS */,
 				CCCCCF72271EA6F3004D05D2 /* TimeTable */,
@@ -603,6 +605,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TimeTableExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RSD98VR55R;
@@ -632,6 +635,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TimeTableExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RSD98VR55R;
