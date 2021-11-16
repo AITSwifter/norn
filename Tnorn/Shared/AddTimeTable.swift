@@ -19,7 +19,6 @@ struct AddTimeTable: View {
     @State private var Ttime: [[Int]] = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
     
     @State private var ordinaly = true
-    @State private var saturday = false
     @State private var holiday = false
     
     @State private var showtimepicker = false
@@ -34,7 +33,7 @@ struct AddTimeTable: View {
     }
     
     var checkisVoid: Bool{
-        return !ordinaly && !saturday && !holiday
+        return !ordinaly && !holiday
     }
     
     var checkiscount: Bool{
@@ -65,10 +64,7 @@ struct AddTimeTable: View {
                     Toggle("平日",isOn: $ordinaly)
                         .toggleStyle(MyCheckboxToggleStyle())
                         .padding()
-                    Toggle("土曜",isOn: $saturday)
-                        .toggleStyle(MyCheckboxToggleStyle())
-                        .padding()
-                    Toggle("日祝",isOn: $holiday)
+                    Toggle("土日祝",isOn: $holiday)
                         .toggleStyle(MyCheckboxToggleStyle())
                         .padding()
                 }
@@ -115,7 +111,7 @@ struct AddTimeTable: View {
                 
                 Button(action: {
                     self.showingAlert = true
-                    savetable(text: name,direction: direction, num: Ttime, ordinal: ordinaly, saturday: saturday, holiday: holiday)
+                    savetable(text: name,direction: direction, num: Ttime, ordinal: ordinaly, holiday: holiday)
                                     }){
                     Text("保存")
                 }
@@ -135,7 +131,7 @@ struct AddTimeTable: View {
         .navigationBarTitle("時刻表入力画面",displayMode: .inline)
     }
     
-    func savetable(text: String,direction: String, num: [[Int]], ordinal: Bool,saturday: Bool, holiday: Bool){
+    func savetable(text: String,direction: String, num: [[Int]], ordinal: Bool, holiday: Bool){
         /// 時刻表新規登録処理
         let newTtable = Timetable(context: context)
         newTtable.name = text

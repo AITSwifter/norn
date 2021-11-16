@@ -162,11 +162,10 @@ struct AddPreset: View {
                 .disabled(!textisVoid)
                 .padding()
                 .alert(isPresented: $showingAlert) {
-                            Alert(title: Text("タイトル"),
-                                  message: Text("詳細メッセージです"),
+                            Alert(title: Text("保存"),
+                                  message: Text("\(name)を保存しました"),
                                   dismissButton: .default(Text("了解"),
-                                                          action: {print("了解がタップされた")})) // ボタンがタップされた時の処理
-                        }
+                                                          action: {self.presentationMode.wrappedValue.dismiss()}))                         }
             }
             
             

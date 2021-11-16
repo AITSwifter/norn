@@ -10,12 +10,13 @@
     </entity>
     <entity name="Timetable" representedClassName="Timetable" syncable="YES" codeGenerationType="class">
         <attribute name="direction" attributeType="String"/>
+        <attribute name="holitable" optional="YES" attributeType="Binary"/>
         <attribute name="name" attributeType="String"/>
-        <attribute name="table" optional="YES" attributeType="Binary"/>
+        <attribute name="orditable" optional="YES" attributeType="Binary"/>
         <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
         <element name="Preset" positionX="27" positionY="144" width="128" height="119"/>
-        <element name="Timetable" positionX="-18" positionY="72" width="128" height="89"/>
+        <element name="Timetable" positionX="-18" positionY="72" width="128" height="104"/>
     </elements>
 </model>
