@@ -32,9 +32,7 @@ struct TableTabView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Timetable.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Timetable>
-    
-    @State var Ttime1 = [[11,12],[11,12],[11,12],[11,12],[11,12],[5,11,12],[11,12],[11,12],[11,12],[12,13],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12]]
-    @State var Ttime2 = [[1,2],[11,12],[11,12],[11,12],[11,12],[5,11,12],[11,12],[11,12],[11,12],[12,13],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12]]
+
     @State private var select: Timetable? = nil
     
     var body: some View{
@@ -46,13 +44,15 @@ struct TableTabView: View {
                         Text(item.name ?? "noname")
                         Spacer()
                         Text(item.direction ?? "nodirection")
+                        Spacer()
+                        Text(String(item.orditable![1][1]))
                     }
                     .contentShape(Rectangle())
                     .onTapGesture{
                         self.select = item
                     }
                     .sheet(item: self.$select, content: { select in
-                        DetailView(Ttime: Ttime1,name:select.name ?? "nodata",direct: select.direction ?? "nodata")
+                        DetailView(Ttime: [[1,2],[4,6]] ,name:select.name ?? "nodata",direct: select.direction ?? "nodata")
                     })
                 }.onDelete(perform: delettimetable)
                 
@@ -129,11 +129,6 @@ struct PresetTabView: View {
     
     @State private var select: Preset? = nil
 
-//    @State var datas = ["通学","通勤","帰宅"]
-//    @State var Tdata1 = ["八草","新豊田","岡崎"]//[出発,中間,到着]
-    @State var Ttime1 = [10,20]
-//    @State var Tdata2 = ["岡崎","新豊田","八草"]//[出発,時間,中間,到着]
-    @State var Ttime2 = [30,20]
     
     var body: some View{
         NavigationView{
@@ -151,7 +146,7 @@ struct PresetTabView: View {
                         }
                         
                         .sheet(item: self.$select, content: { select in
-                            DetailView2(Tdata: [select.start!,"長久手",select.end!],Ttime: Ttime1,name:select.name ?? "nodata")
+                            DetailView2(Tdata: select.middname! ,Ttime: select.needtime! ,name:select.name! ,start: select.start!)
                             
                         })
                     }.onDelete(perform: deletepreset)
@@ -179,6 +174,7 @@ struct DetailView2: View {
     @State var Tdata: [String]
     @State var Ttime: [Int]
     @State var name: String
+    @State var start: String
     
     var body: some View {
         
@@ -187,7 +183,7 @@ struct DetailView2: View {
             ScrollView{
                 VStack{
                     HStack{
-                        Text(Tdata[0])
+                        Text(name)
                             .font(.title)
                     }
                     ForEach(0..<Ttime.count){ index in

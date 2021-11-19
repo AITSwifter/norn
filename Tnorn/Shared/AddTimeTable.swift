@@ -13,9 +13,7 @@ struct AddTimeTable: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State private var name = ""
-    @State private var nameeditting = false
     @State private var direction = ""
-    @State private var direeditting = false
     @State private var Ttime: [[Int]] = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
     
     @State private var ordinaly = true
@@ -56,9 +54,7 @@ struct AddTimeTable: View {
                 }
             VStack{
                 HStack{
-                    CustomTextField(iseditting: $nameeditting, variable: $name, text: "駅名")
-                    CustomTextField(iseditting: $direeditting, variable: $direction, text: "方面")
-                }
+                    InputStation(name: $name, direction: $direction)                }
                 
                 HStack{
                     Toggle("平日",isOn: $ordinaly)
@@ -96,13 +92,17 @@ struct AddTimeTable: View {
                             Button("+"){
                                 Ttimenum = hour-5
                                 self.showtimepicker.toggle()
-                                                                
+                                
                             }
                             .frame(width: 20, height: 20,alignment: .top)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(Color.blue, lineWidth: 2))
-                            .sheet(isPresented: $showtimepicker){
+                            .sheet(isPresented: $showtimepicker, onDismiss: {
+                                for (index,item) in Ttime.enumerated() {
+                                    Ttime[index].sort()
+                                }
+                            }){
                                 playerPicker(Ttime: $Ttime[Ttimenum])
                             }
                         }
@@ -111,16 +111,21 @@ struct AddTimeTable: View {
                 
                 Button(action: {
                     self.showingAlert = true
-                    savetable(text: name,direction: direction, num: Ttime, ordinal: ordinaly, holiday: holiday)
                                     }){
                     Text("保存")
                 }
                 .disabled(!textisVoid || checkisVoid || checkiscount)
                 .alert(isPresented: $showingAlert){
                     Alert(title: Text("保存"),
-                          message: Text("\(name)を保存しました"),
-                          dismissButton: .default(Text("OK"),
+                          message: Text("\(name)を保存していいですか？"),
+                          primaryButton:
+                                .cancel(Text("CANCEL")),
+                          secondaryButton: .default(Text("OK"),
                                                   action:{ /// 現在のViewを閉じる
+                        for (index,item) in Ttime.enumerated() {
+                            Ttime[index].sort()
+                        }
+                        savetable(text: name,direction: direction, num: Ttime, ordinal: ordinaly, holiday: holiday)
                         self.presentationMode.wrappedValue.dismiss()})
                     )
                 }
@@ -136,6 +141,13 @@ struct AddTimeTable: View {
         let newTtable = Timetable(context: context)
         newTtable.name = text
         newTtable.direction = direction
+        if ordinal {
+            newTtable.orditable = num
+        }
+        if holiday {
+            newTtable.holitable = num
+        }
+        newTtable.id = UUID()
         newTtable.timestamp = Date()
         try? context.save()
     }
