@@ -19,7 +19,7 @@ struct PersistenceController {
             newTimetable.timestamp = Date()
             newTimetable.name = station[0]
             newTimetable.direction = station[1]
-            newTimetable.orditable = [[1,5],[6,8]]
+            newTimetable.orditable = [[1,2],[4,6],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
 
         }
         

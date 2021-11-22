@@ -44,15 +44,13 @@ struct TableTabView: View {
                         Text(item.name ?? "noname")
                         Spacer()
                         Text(item.direction ?? "nodirection")
-                        Spacer()
-                        Text(String(item.orditable![1][1]))
                     }
                     .contentShape(Rectangle())
                     .onTapGesture{
                         self.select = item
                     }
                     .sheet(item: self.$select, content: { select in
-                        DetailView(Ttime: [[1,2],[4,6]] ,name:select.name ?? "nodata",direct: select.direction ?? "nodata")
+                        TableDetailView(Ttime: select.orditable! ,name: select.name!,direct: select.direction!)
                     })
                 }.onDelete(perform: delettimetable)
                 
@@ -70,9 +68,8 @@ struct TableTabView: View {
     }
 }
 
-
 //時刻表プレビュー
-struct DetailView: View {
+struct TableDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -146,7 +143,7 @@ struct PresetTabView: View {
                         }
                         
                         .sheet(item: self.$select, content: { select in
-                            DetailView2(Tdata: select.middname! ,Ttime: select.needtime! ,name:select.name! ,start: select.start!)
+                            PresetDetailView(Tdata: select.middname! ,Ntime: select.needtime! ,name:select.name! ,start: select.start!)
                             
                         })
                     }.onDelete(perform: deletepreset)
@@ -166,13 +163,14 @@ struct PresetTabView: View {
 }
 
 
+
 //プリセットプレビュー
-struct DetailView2: View {
+struct PresetDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
     @State var Tdata: [String]
-    @State var Ttime: [Int]
+    @State var Ntime: [Int]
     @State var name: String
     @State var start: String
     
@@ -183,21 +181,20 @@ struct DetailView2: View {
             ScrollView{
                 VStack{
                     HStack{
-                        Text(name)
+                        Text(start)
                             .font(.title)
                     }
-                    ForEach(0..<Ttime.count){ index in
+                    ForEach(0..<Ntime.count){ index in
                         HStack{
                             Text("↓")
                             Text("所要時間")
-                            Text(String(Ttime[index]))
+                            Text(String(Ntime[index]))
                             Text("分")
                             
                         }
                         .padding()
-                        Text(Tdata[index+1])
+                        Text(Tdata[index])
                             .font(.title)
-
                     }
                 }
             }

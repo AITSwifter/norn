@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC2A9D9927482F2A0040CC02 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9D9827482F2A0040CC02 /* Test.swift */; };
+		CC2A9D9A27482F2A0040CC02 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9D9827482F2A0040CC02 /* Test.swift */; };
 		CC9145EB273A54330031E064 /* UpperTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9145EA273A54330031E064 /* UpperTabView.swift */; };
 		CC9145EC273A54330031E064 /* UpperTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9145EA273A54330031E064 /* UpperTabView.swift */; };
 		CC9145F1273A554B0031E064 /* ContentPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9145F0273A554B0031E064 /* ContentPageView.swift */; };
@@ -61,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CC2A9D9827482F2A0040CC02 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		CC492ADB2743897F0023787F /* TimeTableExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimeTableExtension.entitlements; sourceTree = "<group>"; };
 		CC9145EA273A54330031E064 /* UpperTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperTabView.swift; sourceTree = "<group>"; };
 		CC9145F0273A554B0031E064 /* ContentPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPageView.swift; sourceTree = "<group>"; };
@@ -136,6 +139,7 @@
 				CC9145F0273A554B0031E064 /* ContentPageView.swift */,
 				CCCCCF43271E9E12004D05D2 /* Tnorn.xcdatamodeld */,
 				CCA6661A272FE7F60085B172 /* AddPreset.swift */,
+				CC2A9D9827482F2A0040CC02 /* Test.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -312,6 +316,7 @@
 				CCCCCF8C271FD12E004D05D2 /* CustomVIew.swift in Sources */,
 				CC9145F1273A554B0031E064 /* ContentPageView.swift in Sources */,
 				CCCCCF56271E9E14004D05D2 /* Tnorn.xcdatamodeld in Sources */,
+				CC2A9D9927482F2A0040CC02 /* Test.swift in Sources */,
 				CCCCCF5C271E9E14004D05D2 /* Persistence.swift in Sources */,
 				CCA6661B272FE7F60085B172 /* AddPreset.swift in Sources */,
 				CCCCCF58271E9E14004D05D2 /* TnornApp.swift in Sources */,
@@ -331,6 +336,7 @@
 				CCCCCF5B271E9E14004D05D2 /* ContentView.swift in Sources */,
 				CCA6661C272FE7F60085B172 /* AddPreset.swift in Sources */,
 				CCCCCF8D271FD12E004D05D2 /* CustomVIew.swift in Sources */,
+				CC2A9D9A27482F2A0040CC02 /* Test.swift in Sources */,
 				CC9145F2273A554B0031E064 /* ContentPageView.swift in Sources */,
 				CCCCCF8A271FD082004D05D2 /* AddTimeTable.swift in Sources */,
 			);

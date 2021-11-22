@@ -147,7 +147,6 @@ struct AddTimeTable: View {
         if holiday {
             newTtable.holitable = num
         }
-        newTtable.id = UUID()
         newTtable.timestamp = Date()
         try? context.save()
     }

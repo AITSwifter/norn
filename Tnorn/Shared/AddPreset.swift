@@ -133,7 +133,6 @@ struct AddPreset: View {
         newpreset.sdirect = sdirect
         newpreset.middname = middname
         newpreset.midddir = midddir
-        newpreset.id = UUID()
         newpreset.timestamp = Date()
         do {
             try context.save()
