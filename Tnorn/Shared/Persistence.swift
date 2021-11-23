@@ -19,15 +19,19 @@ struct PersistenceController {
             newTimetable.timestamp = Date()
             newTimetable.name = station[0]
             newTimetable.direction = station[1]
+            newTimetable.orditable = [[1,2],[4,6],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
 
         }
         
-        let presets = [["行き道","八草","藤が丘"],["帰り道","藤が丘","八草"]]
-        for preset in presets {
+        let presets = [["行き道","八草"],["帰り道","藤が丘"]]
+        let middset = [["八草"],["藤が丘"]]
+        for (index,preset) in presets.enumerated() {
             let newPreset = Preset(context: viewContext)
             newPreset.name = preset[0]
             newPreset.start = preset[1]
-            newPreset.end = preset[2]
+            newPreset.middname = middset[index]
+            newPreset.midddir = ["were"]
+            newPreset.needtime = [10]
             newPreset.timestamp = Date()
         }
         do {

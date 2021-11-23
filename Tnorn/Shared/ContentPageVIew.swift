@@ -32,9 +32,7 @@ struct TableTabView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Timetable.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Timetable>
-    
-    @State var Ttime1 = [[11,12],[11,12],[11,12],[11,12],[11,12],[5,11,12],[11,12],[11,12],[11,12],[12,13],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12]]
-    @State var Ttime2 = [[1,2],[11,12],[11,12],[11,12],[11,12],[5,11,12],[11,12],[11,12],[11,12],[12,13],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12],[11,12]]
+
     @State private var select: Timetable? = nil
     
     var body: some View{
@@ -52,7 +50,7 @@ struct TableTabView: View {
                         self.select = item
                     }
                     .sheet(item: self.$select, content: { select in
-                        DetailView(Ttime: Ttime1,name:select.name ?? "nodata",direct: select.direction ?? "nodata")
+                        TableDetailView(Ttime: select.orditable! ,name: select.name!,direct: select.direction!)
                     })
                 }.onDelete(perform: delettimetable)
                 
@@ -70,9 +68,8 @@ struct TableTabView: View {
     }
 }
 
-
 //時刻表プレビュー
-struct DetailView: View {
+struct TableDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -129,11 +126,6 @@ struct PresetTabView: View {
     
     @State private var select: Preset? = nil
 
-//    @State var datas = ["通学","通勤","帰宅"]
-//    @State var Tdata1 = ["八草","新豊田","岡崎"]//[出発,中間,到着]
-    @State var Ttime1 = [10,20]
-//    @State var Tdata2 = ["岡崎","新豊田","八草"]//[出発,時間,中間,到着]
-    @State var Ttime2 = [30,20]
     
     var body: some View{
         NavigationView{
@@ -151,7 +143,7 @@ struct PresetTabView: View {
                         }
                         
                         .sheet(item: self.$select, content: { select in
-                            DetailView2(Tdata: [select.start!,"長久手",select.end!],Ttime: Ttime1,name:select.name ?? "nodata")
+                            PresetDetailView(Tdata: select.middname! ,Ntime: select.needtime! ,name:select.name! ,start: select.start!)
                             
                         })
                     }.onDelete(perform: deletepreset)
@@ -171,14 +163,16 @@ struct PresetTabView: View {
 }
 
 
+
 //プリセットプレビュー
-struct DetailView2: View {
+struct PresetDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
     @State var Tdata: [String]
-    @State var Ttime: [Int]
+    @State var Ntime: [Int]
     @State var name: String
+    @State var start: String
     
     var body: some View {
         
@@ -187,21 +181,20 @@ struct DetailView2: View {
             ScrollView{
                 VStack{
                     HStack{
-                        Text(Tdata[0])
+                        Text(start)
                             .font(.title)
                     }
-                    ForEach(0..<Ttime.count){ index in
+                    ForEach(0..<Ntime.count){ index in
                         HStack{
                             Text("↓")
                             Text("所要時間")
-                            Text(String(Ttime[index]))
+                            Text(String(Ntime[index]))
                             Text("分")
                             
                         }
                         .padding()
-                        Text(Tdata[index+1])
+                        Text(Tdata[index])
                             .font(.title)
-
                     }
                 }
             }

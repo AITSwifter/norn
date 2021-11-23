@@ -49,8 +49,9 @@ struct playerPicker: View {
 }
 
 struct CustomTextField: View {
-    @Binding var iseditting: Bool
+
     @Binding var variable: String
+    @State var iseditting = false
     @State var text: String
     
     
@@ -77,10 +78,9 @@ struct CustomTextField: View {
     }
 
 struct NumberField: View {
-    @Binding var iseditting: Bool
     @Binding var variable: Int
+    @State var iseditting = false
     @State var text: String
-    
     
     var body: some View{
         TextField("\(text)",value: $variable, formatter: NumberFormatter(),
@@ -99,5 +99,18 @@ struct NumberField: View {
             .padding()
         // 編集フラグがONの時に枠に影を付ける
             .shadow(color: iseditting ? .blue : .clear, radius: 3)
+            
+    }
+}
+
+struct InputStation: View{
+    @Binding var name: String
+    @Binding var direction: String
+
+    var body: some View{
+        HStack{
+            CustomTextField(variable: $name, text: "駅名")
+            CustomTextField(variable: $direction, text: "方面")
+        }
     }
 }

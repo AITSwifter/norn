@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Preset" representedClassName="Preset" syncable="YES" codeGenerationType="class">
-        <attribute name="edirect" optional="YES" attributeType="String"/>
-        <attribute name="end" attributeType="String"/>
+        <attribute name="midddir" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="middname" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="name" attributeType="String"/>
+        <attribute name="needtime" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[Int]"/>
         <attribute name="sdirect" optional="YES" attributeType="String"/>
         <attribute name="start" attributeType="String"/>
         <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="Timetable" representedClassName="Timetable" syncable="YES" codeGenerationType="class">
         <attribute name="direction" attributeType="String"/>
-        <attribute name="holitable" optional="YES" attributeType="Binary"/>
+        <attribute name="holitable" optional="YES" attributeType="Transformable" customClassName="[[Int]]"/>
         <attribute name="name" attributeType="String"/>
-        <attribute name="orditable" optional="YES" attributeType="Binary"/>
+        <attribute name="orditable" optional="YES" attributeType="Transformable" customClassName="[[Int]]"/>
         <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="Preset" positionX="27" positionY="144" width="128" height="119"/>
+        <element name="Preset" positionX="27" positionY="144" width="128" height="134"/>
         <element name="Timetable" positionX="-18" positionY="72" width="128" height="104"/>
     </elements>
 </model>
