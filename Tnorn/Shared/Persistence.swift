@@ -29,6 +29,7 @@ struct PersistenceController {
             let newPreset = Preset(context: viewContext)
             newPreset.name = preset[0]
             newPreset.start = preset[1]
+            newPreset.sdirect = "test"
             newPreset.middname = middset[index]
             newPreset.midddir = ["were"]
             newPreset.needtime = [10]

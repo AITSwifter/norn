@@ -48,8 +48,95 @@ struct playerPicker: View {
     }
 }
 
-struct CustomTextField: View {
+struct timeview: View{
+    
+    @Binding var Ttime: [Int]
+    @Binding var showpicker: Bool
+    @State var index: Int
+    @Binding var keepTtime: Int
+    @Binding var keeptime: Int
+    @State var timenum: Int
+    @State var isdelete = false
+    
+    
+    var body: some View{
+        Text(String(timenum))
+            .onTapGesture {
+                keepTtime = index
+                keeptime = Ttime.firstIndex(of: timenum)!
+                showpicker = true
+            }
+            .onLongPressGesture {
+                isdelete = true
+            }
+            .alert(isPresented: $isdelete){
+                Alert(title: Text("削除"), message: Text("この要素を削除しますか？"), primaryButton: .default(Text("取消")), secondaryButton: .destructive(Text("削除"),action: {
+                    if Ttime.firstIndex(of: timenum) != nil {
+                        Ttime.remove(at: Ttime.firstIndex(of: timenum)!)
+                    }
+                }))
+                
+            }
+    }
+}
 
+struct timepicker: View{
+    @Binding var showpicker: Bool
+    @Binding var selectminute: Int
+    @Binding var Ttime: [Int]
+    var body: some View{
+        VStack{
+            Button(action: {
+                self.showpicker = false
+            }) {
+                HStack {
+                    Spacer() //右寄せにするため使用
+                    Text("戻る")
+                        .padding()
+                }
+            }
+            Divider()
+            List{
+                ForEach(0..<60){ time in
+                    Button(action: {
+                        selectminute = time
+                        Ttime.sort()
+                        self.showpicker = false
+                    }) {
+                        Text(String(time))
+                    }
+                    .disabled(Ttime.firstIndex(of: time) != nil)
+                }
+            }
+            .listStyle(PlainListStyle())
+        }
+    }
+}
+
+struct testdelete: View{
+    @Binding var Ttime: [Int]
+    @State var time: Int
+    @State var isdelete = false
+    
+    var body: some View{
+        Text(String(time))
+            .onLongPressGesture {
+                isdelete = true
+            }
+            .alert(isPresented: $isdelete){
+                Alert(title: Text("削除"), message: Text("\(time)を削除しますか？"), primaryButton: .default(Text("取消")), secondaryButton: .destructive(Text("削除"),action: {
+                    if Ttime.firstIndex(of: time) != nil {
+                        Ttime.remove(at: Ttime.firstIndex(of: time)!)
+                    }
+                }))
+            }
+        
+    }
+}
+
+//文字列を入力
+struct CustomTextField: View {
+    
     @Binding var variable: String
     @State var iseditting = false
     @State var text: String
@@ -74,9 +161,9 @@ struct CustomTextField: View {
             .shadow(color: iseditting ? .blue : .clear, radius: 3)
         
     }
-    
-    }
+}
 
+//数字入力
 struct NumberField: View {
     @Binding var variable: Int
     @State var iseditting = false
@@ -99,14 +186,15 @@ struct NumberField: View {
             .padding()
         // 編集フラグがONの時に枠に影を付ける
             .shadow(color: iseditting ? .blue : .clear, radius: 3)
-            
+        
     }
 }
 
+// 駅の名前と方面を入力
 struct InputStation: View{
     @Binding var name: String
     @Binding var direction: String
-
+    
     var body: some View{
         HStack{
             CustomTextField(variable: $name, text: "駅名")
