@@ -68,6 +68,54 @@ struct TableTabView: View {
     }
 }
 
+//プリセット
+
+extension String: Identifiable {
+    public var id: String { self }
+}
+
+struct PresetTabView: View {
+    @Environment(\.managedObjectContext) private var Context
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Timetable.timestamp, ascending: true)],
+        animation: .default)
+    private var items: FetchedResults<Preset>
+    
+    @State private var select: Preset? = nil
+
+    
+    var body: some View{
+        NavigationView{
+            ZStack{
+                List{
+                    ForEach(items) { item in
+                        HStack{
+                            Text(item.name ?? "nodata")
+                            Spacer()
+                        }
+                        .contentShape(Rectangle())
+                        .onTapGesture{
+                            self.select = item
+                            
+                        }
+                        .sheet(item: self.$select, content: { select in
+                            PresetDetailView(Tdata: select.middname! ,Ntime: select.needtime! ,name:select.name! ,start: select.start!)
+                        })
+                    }.onDelete(perform: deletepreset)
+                }
+            }
+        }
+    }
+    private func deletepreset(at offsets: IndexSet){
+        for index in offsets {
+            let putitem = items[index]
+            Context.delete(putitem)
+        }
+        try? Context.save
+    }
+}
+
 //時刻表プレビュー
 struct TableDetailView: View {
     
@@ -110,57 +158,6 @@ struct TableDetailView: View {
 }
 
 
-//プリセット
-
-extension String: Identifiable {
-    public var id: String { self }
-}
-
-struct PresetTabView: View {
-    @Environment(\.managedObjectContext) private var Context
-    
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Timetable.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Preset>
-    
-    @State private var select: Preset? = nil
-
-    
-    var body: some View{
-        NavigationView{
-            ZStack{
-                List{
-                    ForEach(items) { item in
-                        HStack{
-                            Text(item.name ?? "nodata")
-                            Spacer()
-                        }
-                        .contentShape(Rectangle())
-                        .onTapGesture{
-                            self.select = item
-                            
-                        }
-                        
-                        .sheet(item: self.$select, content: { select in
-                            PresetDetailView(Tdata: select.middname! ,Ntime: select.needtime! ,name:select.name! ,start: select.start!)
-                            
-                        })
-                    }.onDelete(perform: deletepreset)
-                }
-                
-            }
-            
-        }
-    }
-    private func deletepreset(at offsets: IndexSet){
-        for index in offsets {
-            let putitem = items[index]
-            Context.delete(putitem)
-        }
-        try? Context.save
-    }
-}
 
 
 

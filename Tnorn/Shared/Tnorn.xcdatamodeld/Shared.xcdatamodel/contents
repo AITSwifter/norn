@@ -5,7 +5,7 @@
         <attribute name="middname" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="needtime" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[Int]"/>
-        <attribute name="sdirect" optional="YES" attributeType="String"/>
+        <attribute name="sdirect" attributeType="String"/>
         <attribute name="start" attributeType="String"/>
         <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
