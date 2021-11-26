@@ -15,7 +15,6 @@ enum TabType: Int {
 
 
 struct ContentView: View {
-    
     @Environment(\.managedObjectContext) private var viewContext
     
     @State private var selection: TabType = .timetable

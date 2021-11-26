@@ -9,17 +9,17 @@ import SwiftUI
 
 @main
 struct TnornApp: App {
-    let persistenceController = PersistenceController.shared.managedObjectContext
+    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController)
+                .environment(\.managedObjectContext,persistenceController.managedObjectContext)
         }
     }
 }
 
-//
+//元のやつ
 //import SwiftUI
 //
 //@main
