@@ -9,6 +9,19 @@ import CoreData
 
 struct PersistenceController {
     static let shared = PersistenceController()
+    
+    private let persistentContainer: NSPersistentContainer = {
+            let storeURL = FileManager.appGroupContainerURL.appendingPathComponent("")
+     
+            let container = NSPersistentContainer(name: "Tnorn")
+            container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: storeURL)]
+            container.loadPersistentStores(completionHandler: { storeDescription, error in
+                if let error = error as NSError? {
+                    print(error.localizedDescription)
+                }
+            })
+            return container
+        }()
 
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
@@ -70,4 +83,23 @@ struct PersistenceController {
             }
         })
     }
+}
+
+extension PersistenceController {
+    var managedObjectContext: NSManagedObjectContext {
+        persistentContainer.viewContext
+    }
+    
+    var workingContext: NSManagedObjectContext {
+        
+        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        context.parent = managedObjectContext
+        
+        return context
+    }
+}
+
+extension FileManager {
+    static let appGroupContainerURL = FileManager.default
+        .containerURL(forSecurityApplicationGroupIdentifier: "group.com.sample.CoreDataTest")!
 }

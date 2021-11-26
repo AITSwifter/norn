@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47B11D2E2750842A00E849E8 /* Tnorn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF43271E9E12004D05D2 /* Tnorn.xcdatamodeld */; };
+		47B11D2F2750843300E849E8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF47271E9E12004D05D2 /* Persistence.swift */; };
 		CC2A9D9927482F2A0040CC02 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9D9827482F2A0040CC02 /* Test.swift */; };
 		CC2A9D9A27482F2A0040CC02 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9D9827482F2A0040CC02 /* Test.swift */; };
 		CC9145EB273A54330031E064 /* UpperTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9145EA273A54330031E064 /* UpperTabView.swift */; };
@@ -346,6 +348,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47B11D2E2750842A00E849E8 /* Tnorn.xcdatamodeld in Sources */,
+				47B11D2F2750843300E849E8 /* Persistence.swift in Sources */,
 				CCCCCF79271EA6F5004D05D2 /* TimeTable.intentdefinition in Sources */,
 				CCCCCF74271EA6F3004D05D2 /* TimeTable.swift in Sources */,
 			);
@@ -600,7 +604,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = TimeTableExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RSD98VR55R;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -616,6 +620,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tnorn.TimeTable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -630,9 +635,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = TimeTableExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RSD98VR55R;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TimeTable/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TimeTable;
@@ -646,6 +651,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tnorn.TimeTable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
