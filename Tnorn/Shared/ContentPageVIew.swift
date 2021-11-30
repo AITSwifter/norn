@@ -104,7 +104,7 @@ struct PresetTabView: View {
                             try? Context.save()
                         }
                         .sheet(item: self.$select, content: { select in
-                            PresetDetailView(Tdata: select.middname! ,Ntime: select.needtime! ,name:select.name! ,start: select.start!)
+                            PresetDetailView(Tdata: select.middname ?? ["middle"] ,Ntime: select.needtime ?? [10],name:select.name ?? "aho" ,start: select.start ?? "start")
                         })
                     }.onDelete(perform: deletepreset)
                 }
