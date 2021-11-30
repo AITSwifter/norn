@@ -53,7 +53,7 @@ struct TableTabView: View {
 
                     }
                     .sheet(item: self.$select, content: { select in
-                        TableDetailView(Ttime: select.orditable! ,name: select.name!,direct: select.direction!)
+                        TableDetailView(Ttime: (select.orditable ?? select.holitable)! ,name: select.name!,direct: select.direction!,orditable: (select.orditable ?? [[0]])!,holitable: (select.holitable ?? [[0]])!)
                     })
                     
                 }.onDelete(perform: delettimetable)
@@ -139,6 +139,7 @@ struct TableDetailView: View {
     @State var Ttime:[[Int]]
     @State var name:String
     @State var direct:String
+
     
     @State private var direction = ""
     @State private var ordinaly = true
@@ -179,6 +180,9 @@ struct TableDetailView: View {
         return rtn
     }
     
+    @State var orditable: [[Int]]
+    @State var holitable: [[Int]]
+
     var body: some View {
         HStack{
             Text(name)
@@ -191,6 +195,21 @@ struct TableDetailView: View {
              Alert(title: Text("編集モード"),message: Text("編集ができるようになりました。"))
              }
              */
+        }
+        HStack{
+            Button (action: {
+                Ttime = orditable
+            }){
+                Text("平日")
+            }
+            .disabled(orditable.count == 1)
+            Button(action: {
+                Ttime = holitable
+            }){
+                Text("土日祝")
+            }
+            .disabled(holitable.count == 1)
+
         }
         if editselect {
             //編集スペース
@@ -297,6 +316,7 @@ struct TableDetailView: View {
                                     //}.onDelete { offsets in
                                     //  self.Ttime.remove(atOffsets: offsets)
                                 }
+
                             }
                         }
                     }
