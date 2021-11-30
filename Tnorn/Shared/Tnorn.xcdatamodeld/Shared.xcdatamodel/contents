@@ -11,9 +11,9 @@
     </entity>
     <entity name="Timetable" representedClassName="Timetable" syncable="YES" codeGenerationType="class">
         <attribute name="direction" attributeType="String" defaultValueString="行き先"/>
-        <attribute name="holitable" optional="YES" attributeType="Transformable" customClassName="[[Int]]"/>
+        <attribute name="holitable" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[[Int]]"/>
         <attribute name="name" attributeType="String" defaultValueString="名前"/>
-        <attribute name="orditable" optional="YES" attributeType="Transformable" customClassName="[[Int]]"/>
+        <attribute name="orditable" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[[Int]]"/>
         <attribute name="timestamp" attributeType="Date" defaultDateTimeInterval="659890800" usesScalarValueType="NO"/>
     </entity>
     <elements>
