@@ -141,8 +141,8 @@ struct AddPreset: View {
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
-    
 }
+    
 
 struct AddPreset_Previews: PreviewProvider {
     static var previews: some View {

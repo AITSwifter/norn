@@ -97,6 +97,7 @@ struct timepicker: View{
             }
             Divider()
             List{
+                
                 ForEach(0..<60){ time in
                     Button(action: {
                         selectminute = time
