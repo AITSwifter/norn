@@ -10,7 +10,7 @@ import SwiftUI
 struct Test: View {
     @State var l = []
     var body: some View {
-        Text("\(l.count)")
+        Text("herro")
     }
 }
 

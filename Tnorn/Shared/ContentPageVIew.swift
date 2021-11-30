@@ -50,7 +50,7 @@ struct TableTabView: View {
                         self.select = item
                     }
                     .sheet(item: self.$select, content: { select in
-                        TableDetailView(Ttime: select.orditable! ,name: select.name!,direct: select.direction!)
+                        TableDetailView(Ttime: (select.orditable ?? select.holitable)! ,name: select.name!,direct: select.direction!,orditable: (select.orditable ?? [[0]])!,holitable: (select.holitable ?? [[0]])!)
                     })
                 }.onDelete(perform: delettimetable)
                 
@@ -124,10 +124,27 @@ struct TableDetailView: View {
     @State var Ttime:[[Int]]
     @State var name:String
     @State var direct:String
+    @State var orditable: [[Int]]
+    @State var holitable: [[Int]]
     var body: some View {
         HStack{
             Text(name)
             Text(direct)
+        }
+        HStack{
+            Button (action: {
+                Ttime = orditable
+            }){
+                Text("平日")
+            }
+            .disabled(orditable.count == 1)
+            Button(action: {
+                Ttime = holitable
+            }){
+                Text("土日祝")
+            }
+            .disabled(holitable.count == 1)
+
         }
         
         List{
@@ -140,8 +157,6 @@ struct TableDetailView: View {
                         HStack{
                             ForEach(Ttime[hour-5], id: \.self) { time in
                                 Text(String(time))
-                                //}.onDelete { offsets in
-                                //  self.Ttime.remove(atOffsets: offsets)
                             }
                         }
                     }
