@@ -3,18 +3,18 @@
     <entity name="Preset" representedClassName="Preset" syncable="YES" codeGenerationType="class">
         <attribute name="midddir" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="middname" optional="YES" attributeType="Transformable" customClassName="[String]"/>
-        <attribute name="name" attributeType="String"/>
+        <attribute name="name" attributeType="String" defaultValueString="名前"/>
         <attribute name="needtime" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[Int]"/>
-        <attribute name="sdirect" attributeType="String"/>
-        <attribute name="start" attributeType="String"/>
-        <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="sdirect" attributeType="String" defaultValueString="行き先"/>
+        <attribute name="start" attributeType="String" defaultValueString="出発地点"/>
+        <attribute name="timestamp" attributeType="Date" defaultDateTimeInterval="659890800" usesScalarValueType="NO"/>
     </entity>
     <entity name="Timetable" representedClassName="Timetable" syncable="YES" codeGenerationType="class">
-        <attribute name="direction" attributeType="String"/>
-        <attribute name="holitable" optional="YES" attributeType="Transformable" customClassName="[[Int]]"/>
-        <attribute name="name" attributeType="String"/>
-        <attribute name="orditable" optional="YES" attributeType="Transformable" customClassName="[[Int]]"/>
-        <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="direction" attributeType="String" defaultValueString="行き先"/>
+        <attribute name="holitable" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[[Int]]"/>
+        <attribute name="name" attributeType="String" defaultValueString="名前"/>
+        <attribute name="orditable" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[[Int]]"/>
+        <attribute name="timestamp" attributeType="Date" defaultDateTimeInterval="659890800" usesScalarValueType="NO"/>
     </entity>
     <elements>
         <element name="Preset" positionX="27" positionY="144" width="128" height="134"/>

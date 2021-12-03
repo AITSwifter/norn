@@ -107,7 +107,7 @@ struct AddPreset: View {
                 }
                 Button("保存",action: {
                     self.showingAlert = true
-                    
+
                 })
                     .disabled(!textisVoid)
                     .padding()
@@ -117,7 +117,9 @@ struct AddPreset: View {
                               primaryButton:
                                     .cancel(Text("CANCEL")),
                               secondaryButton: .default(Text("OK"),
+
                                                         action: {
+
                             Savepreset(name: name, start: start, sdirect: sdirect, middname: middname, midddir:  midddir,needtime: needtime)
                             self.presentationMode.wrappedValue.dismiss()}))                         }
             }
@@ -129,7 +131,9 @@ struct AddPreset: View {
         .navigationBarTitle("プリセット入力画面",displayMode: .inline)
     }
     
+
     func Savepreset(name: String, start: String, sdirect: String, middname: [String], midddir: [String], needtime: [Int]){
+
         let newpreset = Preset(context: context)
         newpreset.name = name
         newpreset.start = start
