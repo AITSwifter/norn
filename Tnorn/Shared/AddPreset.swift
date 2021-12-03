@@ -25,7 +25,7 @@ struct AddPreset: View {
     }
     
     var checklistEnpty: Bool{
-        return middname.firstIndex(of: "") == nil
+        return middname.firstIndex(of: "") == nil && midddir.firstIndex(of: "") == nil
     }
     
     var body: some View{
@@ -107,16 +107,19 @@ struct AddPreset: View {
                 }
                 Button("保存",action: {
                     self.showingAlert = true
-                    Savepreset(name: name, start: start, sdirect: sdirect, middname: middname, midddir:  midddir)
                     
                 })
                     .disabled(!textisVoid)
                     .padding()
                     .alert(isPresented: $showingAlert) {
                         Alert(title: Text("保存"),
-                              message: Text("\(name)を保存しました"),
-                              dismissButton: .default(Text("了解"),
-                                                      action: {self.presentationMode.wrappedValue.dismiss()}))                         }
+                              message: Text("\(name)を保存していいですか？"),
+                              primaryButton:
+                                    .cancel(Text("CANCEL")),
+                              secondaryButton: .default(Text("OK"),
+                                                        action: {
+                            Savepreset(name: name, start: start, sdirect: sdirect, middname: middname, midddir:  midddir,needtime: needtime)
+                            self.presentationMode.wrappedValue.dismiss()}))                         }
             }
             
             
@@ -126,23 +129,19 @@ struct AddPreset: View {
         .navigationBarTitle("プリセット入力画面",displayMode: .inline)
     }
     
-    func Savepreset(name: String, start: String, sdirect: String, middname: [String], midddir: [String]){
+    func Savepreset(name: String, start: String, sdirect: String, middname: [String], midddir: [String], needtime: [Int]){
         let newpreset = Preset(context: context)
         newpreset.name = name
         newpreset.start = start
         newpreset.sdirect = sdirect
         newpreset.middname = middname
         newpreset.midddir = midddir
+        newpreset.needtime = needtime
         newpreset.timestamp = Date()
-        do {
-            try context.save()
-        } catch {
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
+        try? context.save()
     }
 }
-    
+
 
 struct AddPreset_Previews: PreviewProvider {
     static var previews: some View {
