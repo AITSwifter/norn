@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC2A9D9927482F2A0040CC02 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9D9827482F2A0040CC02 /* Test.swift */; };
-		CC2A9D9A27482F2A0040CC02 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9D9827482F2A0040CC02 /* Test.swift */; };
+		CC43BD862756626B003080AE /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCCCCF6E271EA6F3004D05D2 /* WidgetKit.framework */; platformFilter = maccatalyst; };
+		CC43BD872756626B003080AE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCCCCF70271EA6F3004D05D2 /* SwiftUI.framework */; platformFilter = maccatalyst; };
+		CC43BD8A2756626B003080AE /* PresetWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC43BD892756626B003080AE /* PresetWidget.swift */; };
+		CC43BD8C2756626C003080AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC43BD8B2756626C003080AE /* Assets.xcassets */; };
+		CC43BD902756626C003080AE /* PresetWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CC43BD852756626B003080AE /* PresetWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CC43BD9527574455003080AE /* Stationdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC43BD9427574455003080AE /* Stationdata.swift */; };
 		CC9145EB273A54330031E064 /* UpperTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9145EA273A54330031E064 /* UpperTabView.swift */; };
 		CC9145EC273A54330031E064 /* UpperTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9145EA273A54330031E064 /* UpperTabView.swift */; };
 		CC9145F1273A554B0031E064 /* ContentPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9145F0273A554B0031E064 /* ContentPageView.swift */; };
@@ -39,6 +43,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CC43BD8E2756626C003080AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CCCCCF3E271E9E12004D05D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC43BD842756626B003080AE;
+			remoteInfo = PresetWidgetExtension;
+		};
 		CCCCCF7B271EA6F5004D05D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CCCCCF3E271E9E12004D05D2 /* Project object */;
@@ -56,6 +67,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				CCCCCF7D271EA6F5004D05D2 /* TimeTableExtension.appex in Embed App Extensions */,
+				CC43BD902756626C003080AE /* PresetWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,7 +75,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CC2A9D9827482F2A0040CC02 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		CC43BD852756626B003080AE /* PresetWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PresetWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC43BD892756626B003080AE /* PresetWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetWidget.swift; sourceTree = "<group>"; };
+		CC43BD8B2756626C003080AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC43BD8D2756626C003080AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC43BD9427574455003080AE /* Stationdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stationdata.swift; sourceTree = "<group>"; };
 		CC492ADB2743897F0023787F /* TimeTableExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimeTableExtension.entitlements; sourceTree = "<group>"; };
 		CC9145EA273A54330031E064 /* UpperTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperTabView.swift; sourceTree = "<group>"; };
 		CC9145F0273A554B0031E064 /* ContentPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPageView.swift; sourceTree = "<group>"; };
@@ -88,6 +104,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CC43BD822756626B003080AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC43BD872756626B003080AE /* SwiftUI.framework in Frameworks */,
+				CC43BD862756626B003080AE /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CCCCCF4A271E9E14004D05D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,6 +139,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC43BD882756626B003080AE /* PresetWidget */ = {
+			isa = PBXGroup;
+			children = (
+				CC43BD892756626B003080AE /* PresetWidget.swift */,
+				CC43BD9427574455003080AE /* Stationdata.swift */,
+				CC43BD8B2756626C003080AE /* Assets.xcassets */,
+				CC43BD8D2756626C003080AE /* Info.plist */,
+			);
+			path = PresetWidget;
+			sourceTree = "<group>";
+		};
 		CCCCCF3D271E9E12004D05D2 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +157,7 @@
 				CCCCCF42271E9E12004D05D2 /* Shared */,
 				CCCCCF54271E9E14004D05D2 /* macOS */,
 				CCCCCF72271EA6F3004D05D2 /* TimeTable */,
+				CC43BD882756626B003080AE /* PresetWidget */,
 				CCCCCF6D271EA6F3004D05D2 /* Frameworks */,
 				CCCCCF4E271E9E14004D05D2 /* Products */,
 			);
@@ -139,7 +176,6 @@
 				CC9145F0273A554B0031E064 /* ContentPageView.swift */,
 				CCCCCF43271E9E12004D05D2 /* Tnorn.xcdatamodeld */,
 				CCA6661A272FE7F60085B172 /* AddPreset.swift */,
-				CC2A9D9827482F2A0040CC02 /* Test.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -150,6 +186,7 @@
 				CCCCCF4D271E9E14004D05D2 /* Tnorn.app */,
 				CCCCCF53271E9E14004D05D2 /* Tnorn.app */,
 				CCCCCF6C271EA6F3004D05D2 /* TimeTableExtension.appex */,
+				CC43BD852756626B003080AE /* PresetWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,6 +222,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CC43BD842756626B003080AE /* PresetWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC43BD932756626C003080AE /* Build configuration list for PBXNativeTarget "PresetWidgetExtension" */;
+			buildPhases = (
+				CC43BD812756626B003080AE /* Sources */,
+				CC43BD822756626B003080AE /* Frameworks */,
+				CC43BD832756626B003080AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PresetWidgetExtension;
+			productName = PresetWidgetExtension;
+			productReference = CC43BD852756626B003080AE /* PresetWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		CCCCCF4C271E9E14004D05D2 /* Tnorn (iOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCCCCF62271E9E14004D05D2 /* Build configuration list for PBXNativeTarget "Tnorn (iOS)" */;
@@ -198,6 +252,7 @@
 			);
 			dependencies = (
 				CCCCCF7C271EA6F5004D05D2 /* PBXTargetDependency */,
+				CC43BD8F2756626C003080AE /* PBXTargetDependency */,
 			);
 			name = "Tnorn (iOS)";
 			productName = "Tnorn (iOS)";
@@ -245,9 +300,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					CC43BD842756626B003080AE = {
+						CreatedOnToolsVersion = 13.1;
+					};
 					CCCCCF4C271E9E14004D05D2 = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -275,11 +333,20 @@
 				CCCCCF4C271E9E14004D05D2 /* Tnorn (iOS) */,
 				CCCCCF52271E9E14004D05D2 /* Tnorn (macOS) */,
 				CCCCCF6B271EA6F3004D05D2 /* TimeTableExtension */,
+				CC43BD842756626B003080AE /* PresetWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CC43BD832756626B003080AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC43BD8C2756626C003080AE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CCCCCF4B271E9E14004D05D2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,6 +374,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CC43BD812756626B003080AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC43BD9527574455003080AE /* Stationdata.swift in Sources */,
+				CC43BD8A2756626B003080AE /* PresetWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CCCCCF49271E9E14004D05D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -316,7 +392,6 @@
 				CCCCCF8C271FD12E004D05D2 /* CustomVIew.swift in Sources */,
 				CC9145F1273A554B0031E064 /* ContentPageView.swift in Sources */,
 				CCCCCF56271E9E14004D05D2 /* Tnorn.xcdatamodeld in Sources */,
-				CC2A9D9927482F2A0040CC02 /* Test.swift in Sources */,
 				CCCCCF5C271E9E14004D05D2 /* Persistence.swift in Sources */,
 				CCA6661B272FE7F60085B172 /* AddPreset.swift in Sources */,
 				CCCCCF58271E9E14004D05D2 /* TnornApp.swift in Sources */,
@@ -336,7 +411,6 @@
 				CCCCCF5B271E9E14004D05D2 /* ContentView.swift in Sources */,
 				CCA6661C272FE7F60085B172 /* AddPreset.swift in Sources */,
 				CCCCCF8D271FD12E004D05D2 /* CustomVIew.swift in Sources */,
-				CC2A9D9A27482F2A0040CC02 /* Test.swift in Sources */,
 				CC9145F2273A554B0031E064 /* ContentPageView.swift in Sources */,
 				CCCCCF8A271FD082004D05D2 /* AddTimeTable.swift in Sources */,
 			);
@@ -354,6 +428,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CC43BD8F2756626C003080AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC43BD842756626B003080AE /* PresetWidgetExtension */;
+			targetProxy = CC43BD8E2756626C003080AE /* PBXContainerItemProxy */;
+		};
 		CCCCCF7C271EA6F5004D05D2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CCCCCF6B271EA6F3004D05D2 /* TimeTableExtension */;
@@ -362,6 +441,65 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		CC43BD912756626C003080AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RSD98VR55R;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PresetWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PresetWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tnorn.PresetWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CC43BD922756626C003080AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RSD98VR55R;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PresetWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PresetWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tnorn.PresetWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		CCCCCF60271E9E14004D05D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -658,6 +796,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CC43BD932756626C003080AE /* Build configuration list for PBXNativeTarget "PresetWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC43BD912756626C003080AE /* Debug */,
+				CC43BD922756626C003080AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CCCCCF41271E9E12004D05D2 /* Build configuration list for PBXProject "Tnorn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

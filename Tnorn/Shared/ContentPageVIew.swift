@@ -220,11 +220,6 @@ struct TableDetailView: View {
             Button("編集"){
                 self.editselect = true
             }
-            /*
-             .alert(isPresented: $editselect){
-             Alert(title: Text("編集モード"),message: Text("編集ができるようになりました。"))
-             }
-             */
         }
         
         if editselect {
