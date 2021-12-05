@@ -100,7 +100,7 @@ struct TableTabView: View {
     }
 }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
 
 
@@ -147,8 +147,8 @@ struct TableTabView: View {
 //}
 
 
-=======
->>>>>>> 5d19f3ac05007edd8888b14cfcd6c2cb5d421630
+//=======
+//>>>>>>> 5d19f3ac05007edd8888b14cfcd6c2cb5d421630
 //時刻表プレビュー
 struct TableDetailView: View {
     
