@@ -103,47 +103,47 @@ struct TableTabView: View {
 
 
 
-struct PresetTabView: View {
-    @Environment(\.managedObjectContext) private var Context
-    
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Timetable.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Preset>
-    
-    @State private var select: Preset? = nil
-    
-    
-    var body: some View{
-        NavigationView{
-            ZStack{
-                List{
-                    ForEach(items) { item in
-                        HStack{
-                            Text(item.name ?? "nodata")
-                            Spacer()
-                        }
-                        .contentShape(Rectangle())
-                        .onTapGesture{
-                            self.select = item
-                            try? Context.save()
-                        }
-                        .sheet(item: self.$select, content: { select in
-                            PresetDetailView(Tdata: select.middname ?? ["middle"] ,Ntime: select.needtime ?? [10],name:select.name ?? "aho" ,start: select.start ?? "start")
-                        })
-                    }.onDelete(perform: deletepreset)
-                }
-            }
-        }
-    }
-    private func deletepreset(at offsets: IndexSet){
-        for index in offsets {
-            let putitem = items[index]
-            Context.delete(putitem)
-        }
-        try? Context.save
-    }
-}
+//struct PresetTabView: View {
+//    @Environment(\.managedObjectContext) private var Context
+//    
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \Timetable.timestamp, ascending: true)],
+//        animation: .default)
+//    private var items: FetchedResults<Preset>
+//    
+//    @State private var select: Preset? = nil
+//    
+//    
+//    var body: some View{
+//        NavigationView{
+//            ZStack{
+//                List{
+//                    ForEach(items) { item in
+//                        HStack{
+//                            Text(item.name ?? "nodata")
+//                            Spacer()
+//                        }
+//                        .contentShape(Rectangle())
+//                        .onTapGesture{
+//                            self.select = item
+//                            try? Context.save()
+//                        }
+//                        .sheet(item: self.$select, content: { select in
+//                            PresetDetailView(Tdata: select.middname ?? ["middle"] ,Ntime: select.needtime ?? [10],name:select.name ?? "aho" ,start: select.start ?? "start")
+//                        })
+//                    }.onDelete(perform: deletepreset)
+//                }
+//            }
+//        }
+//    }
+//    private func deletepreset(at offsets: IndexSet){
+//        for index in offsets {
+//            let putitem = items[index]
+//            Context.delete(putitem)
+//        }
+//        try? Context.save
+//    }
+//}
 
 
 //時刻表プレビュー
