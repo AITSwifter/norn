@@ -170,7 +170,7 @@ struct SmallView: View{
             HStack{
                 Text(set.name)
                     .font(.caption)
-                Text(set.stations[position].name)
+                Text(set.stations[position].name+"発")
                     .font(.caption)
 
             }
@@ -251,7 +251,7 @@ struct tableView: View{
     var name: String
     var table: [[Int]]
     var body: some View{
-        Text(name)
+        Text(name+"発")
             .font(.caption)
         VStack{
             ForEach(table, id: \.self){ item in
