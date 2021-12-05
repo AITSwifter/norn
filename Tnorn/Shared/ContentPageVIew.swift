@@ -100,6 +100,7 @@ struct TableTabView: View {
     }
 }
 
+<<<<<<< HEAD
 
 
 
@@ -146,6 +147,8 @@ struct TableTabView: View {
 //}
 
 
+=======
+>>>>>>> 5d19f3ac05007edd8888b14cfcd6c2cb5d421630
 //時刻表プレビュー
 struct TableDetailView: View {
     
@@ -450,8 +453,6 @@ struct PresetTabView: View {
                             
                             PresetDetailView(isedit: $isedit, Tdata: select.middname ?? ["d"], Ntime: select.needtime ?? [0], name: $setname, start: $setstart, sdirect: $setsdirect, middname: $setmiddname, midddir: $setmidddir, needtime: $setneedtime)
                             
-                            //PresetDetailView(isedit: $isedit, Tdata: $setTdata ,Ntime: $setNtime ,name: $setname ,start: $setstart)
-                            //PresetDetailView(isedit: $isedit, name: $setname, start: $setstart, sdirect: $setsdirect, middname: $setmiddname, midddir: $setmidddir, needtime: $setneedtime)
                         })
                     }.onDelete(perform: deletepreset)
                 }
