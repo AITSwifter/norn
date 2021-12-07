@@ -292,7 +292,7 @@ struct PresetWidget: Widget {
 
 struct PresetWidget_Previews: PreviewProvider {
     static var previews: some View {
-        PresetWidgetEntryView(entry: SimpleEntry(date: Date(),set: attset, position: 2))
+        PresetWidgetEntryView(entry: SimpleEntry(date: Date(),set: attset, position: 0))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
     
