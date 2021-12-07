@@ -110,7 +110,7 @@ struct PresetWidgetEntryView : View {
         if entry.position+1 != entry.set.stations.count{
             for hin in h-5 ..< 20{
                 for item in stable[hin]{
-                    if m + entry.set.needtime[entry.position] < item || h-5 < hin{
+                    if neartable[0][1] + entry.set.needtime[entry.position] < item || neartable[0][1] < hin{
                         rtn[count][0] = hin
                         rtn[count][1] = item
                         count += 1
@@ -292,7 +292,7 @@ struct PresetWidget: Widget {
 
 struct PresetWidget_Previews: PreviewProvider {
     static var previews: some View {
-        PresetWidgetEntryView(entry: SimpleEntry(date: Date(),set: attset, position: 1))
+        PresetWidgetEntryView(entry: SimpleEntry(date: Date(),set: attset, position: 2))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
     
