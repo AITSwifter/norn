@@ -251,8 +251,14 @@ struct tableView: View{
     var name: String
     var table: [[Int]]
     var body: some View{
-        Text(name+"発")
-            .font(.caption)
+        if name != "到着時間"{
+            Text(name+"発")
+                .font(.caption)
+        } else{
+            Text(name)
+                .font(.caption)
+        }
+        
         VStack{
             ForEach(table, id: \.self){ item in
                 if item[0]+item[1] != 0{
