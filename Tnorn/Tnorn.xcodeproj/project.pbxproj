@@ -31,10 +31,6 @@
 		CCCCCF5F271E9E14004D05D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCCCCF48271E9E14004D05D2 /* Assets.xcassets */; };
 		CCCCCF6F271EA6F3004D05D2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCCCCF6E271EA6F3004D05D2 /* WidgetKit.framework */; platformFilter = maccatalyst; };
 		CCCCCF71271EA6F3004D05D2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCCCCF70271EA6F3004D05D2 /* SwiftUI.framework */; platformFilter = maccatalyst; };
-		CCCCCF74271EA6F3004D05D2 /* TimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF73271EA6F3004D05D2 /* TimeTable.swift */; };
-		CCCCCF77271EA6F5004D05D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCCCCF76271EA6F5004D05D2 /* Assets.xcassets */; };
-		CCCCCF79271EA6F5004D05D2 /* TimeTable.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF75271EA6F3004D05D2 /* TimeTable.intentdefinition */; };
-		CCCCCF7A271EA6F5004D05D2 /* TimeTable.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF75271EA6F3004D05D2 /* TimeTable.intentdefinition */; };
 		CCCCCF7D271EA6F5004D05D2 /* TimeTableExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CCCCCF6C271EA6F3004D05D2 /* TimeTableExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CCCCCF89271FD082004D05D2 /* AddTimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF88271FD082004D05D2 /* AddTimeTable.swift */; };
 		CCCCCF8A271FD082004D05D2 /* AddTimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF88271FD082004D05D2 /* AddTimeTable.swift */; };
@@ -95,10 +91,6 @@
 		CCCCCF6C271EA6F3004D05D2 /* TimeTableExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimeTableExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCCCCF6E271EA6F3004D05D2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CCCCCF70271EA6F3004D05D2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		CCCCCF73271EA6F3004D05D2 /* TimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTable.swift; sourceTree = "<group>"; };
-		CCCCCF75271EA6F3004D05D2 /* TimeTable.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = TimeTable.intentdefinition; sourceTree = "<group>"; };
-		CCCCCF76271EA6F5004D05D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CCCCCF78271EA6F5004D05D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCCCCF88271FD082004D05D2 /* AddTimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimeTable.swift; sourceTree = "<group>"; };
 		CCCCCF8B271FD12E004D05D2 /* CustomVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVIew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,7 +148,6 @@
 				CC492ADB2743897F0023787F /* TimeTableExtension.entitlements */,
 				CCCCCF42271E9E12004D05D2 /* Shared */,
 				CCCCCF54271E9E14004D05D2 /* macOS */,
-				CCCCCF72271EA6F3004D05D2 /* TimeTable */,
 				CC43BD882756626B003080AE /* PresetWidget */,
 				CCCCCF6D271EA6F3004D05D2 /* Frameworks */,
 				CCCCCF4E271E9E14004D05D2 /* Products */,
@@ -206,17 +197,6 @@
 				CCCCCF70271EA6F3004D05D2 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CCCCCF72271EA6F3004D05D2 /* TimeTable */ = {
-			isa = PBXGroup;
-			children = (
-				CCCCCF73271EA6F3004D05D2 /* TimeTable.swift */,
-				CCCCCF75271EA6F3004D05D2 /* TimeTable.intentdefinition */,
-				CCCCCF76271EA6F5004D05D2 /* Assets.xcassets */,
-				CCCCCF78271EA6F5004D05D2 /* Info.plist */,
-			);
-			path = TimeTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,7 +347,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCCCCF77271EA6F5004D05D2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +374,6 @@
 				CCCCCF5C271E9E14004D05D2 /* Persistence.swift in Sources */,
 				CCA6661B272FE7F60085B172 /* AddPreset.swift in Sources */,
 				CCCCCF58271E9E14004D05D2 /* TnornApp.swift in Sources */,
-				CCCCCF7A271EA6F5004D05D2 /* TimeTable.intentdefinition in Sources */,
 				CCCCCF5A271E9E14004D05D2 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,8 +398,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCCCCF79271EA6F5004D05D2 /* TimeTable.intentdefinition in Sources */,
-				CCCCCF74271EA6F3004D05D2 /* TimeTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

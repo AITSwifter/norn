@@ -87,7 +87,7 @@ struct PresetWidgetEntryView : View {
         var rtn = [[0,0],[0,0],[0,0]]
         for hin in h-5 ..< 20{
             for item in ftable[hin]{
-                if m < item || h-5 < hin{
+                if m % 60 < item || h-5+((m+1)/60) < hin{
                     rtn[count][0] = hin
                     rtn[count][1] = item
                     count += 1
@@ -110,7 +110,7 @@ struct PresetWidgetEntryView : View {
         if entry.position+1 != entry.set.stations.count{
             for hin in h-5 ..< 20{
                 for item in stable[hin]{
-                    if m + entry.set.needtime[entry.position] >= item || h-5 < hin{
+                    if neartable[0][1] + entry.set.needtime[entry.position] >= item || neartable[0][0] < hin{
                         rtn[count][0] = hin
                         rtn[count][1] = item
                         count += 1
