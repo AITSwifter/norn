@@ -75,6 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C5686E13275D132100D5BAFC /* PresetWidgetExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PresetWidgetExtensionRelease.entitlements; sourceTree = "<group>"; };
 		CC43BD852756626B003080AE /* PresetWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PresetWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC43BD892756626B003080AE /* PresetWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetWidget.swift; sourceTree = "<group>"; };
 		CC43BD8B2756626C003080AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,6 +154,7 @@
 		CCCCCF3D271E9E12004D05D2 = {
 			isa = PBXGroup;
 			children = (
+				C5686E13275D132100D5BAFC /* PresetWidgetExtensionRelease.entitlements */,
 				CC492ADB2743897F0023787F /* TimeTableExtension.entitlements */,
 				CCCCCF42271E9E12004D05D2 /* Shared */,
 				CCCCCF54271E9E14004D05D2 /* macOS */,
@@ -475,6 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = PresetWidgetExtensionRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RSD98VR55R;

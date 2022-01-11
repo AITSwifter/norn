@@ -8,6 +8,7 @@
 import WidgetKit
 import SwiftUI
 
+
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), set: attset,position: 0)
@@ -87,7 +88,7 @@ struct PresetWidgetEntryView : View {
         var rtn = [[0,0],[0,0],[0,0]]
         for hin in h-5 ..< 20{
             for item in ftable[hin]{
-                if m < item || h-5 < hin{
+                if m % 60 < item || h-5+((m+1)/60) < hin{
                     rtn[count][0] = hin
                     rtn[count][1] = item
                     count += 1
