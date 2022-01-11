@@ -29,9 +29,6 @@
 		CCCCCF5D271E9E14004D05D2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF47271E9E12004D05D2 /* Persistence.swift */; };
 		CCCCCF5E271E9E14004D05D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCCCCF48271E9E14004D05D2 /* Assets.xcassets */; };
 		CCCCCF5F271E9E14004D05D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCCCCF48271E9E14004D05D2 /* Assets.xcassets */; };
-		CCCCCF6F271EA6F3004D05D2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCCCCF6E271EA6F3004D05D2 /* WidgetKit.framework */; platformFilter = maccatalyst; };
-		CCCCCF71271EA6F3004D05D2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCCCCF70271EA6F3004D05D2 /* SwiftUI.framework */; platformFilter = maccatalyst; };
-		CCCCCF7D271EA6F5004D05D2 /* TimeTableExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CCCCCF6C271EA6F3004D05D2 /* TimeTableExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CCCCCF89271FD082004D05D2 /* AddTimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF88271FD082004D05D2 /* AddTimeTable.swift */; };
 		CCCCCF8A271FD082004D05D2 /* AddTimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF88271FD082004D05D2 /* AddTimeTable.swift */; };
 		CCCCCF8C271FD12E004D05D2 /* CustomVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCCCF8B271FD12E004D05D2 /* CustomVIew.swift */; };
@@ -46,13 +43,6 @@
 			remoteGlobalIDString = CC43BD842756626B003080AE;
 			remoteInfo = PresetWidgetExtension;
 		};
-		CCCCCF7B271EA6F5004D05D2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CCCCCF3E271E9E12004D05D2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CCCCCF6B271EA6F3004D05D2;
-			remoteInfo = TimeTableExtension;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,7 +52,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				CCCCCF7D271EA6F5004D05D2 /* TimeTableExtension.appex in Embed App Extensions */,
 				CC43BD902756626C003080AE /* PresetWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -88,7 +77,6 @@
 		CCCCCF4D271E9E14004D05D2 /* Tnorn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tnorn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCCCCF53271E9E14004D05D2 /* Tnorn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tnorn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCCCCF55271E9E14004D05D2 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		CCCCCF6C271EA6F3004D05D2 /* TimeTableExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimeTableExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCCCCF6E271EA6F3004D05D2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CCCCCF70271EA6F3004D05D2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		CCCCCF88271FD082004D05D2 /* AddTimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimeTable.swift; sourceTree = "<group>"; };
@@ -116,15 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CCCCCF69271EA6F3004D05D2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CCCCCF71271EA6F3004D05D2 /* SwiftUI.framework in Frameworks */,
-				CCCCCF6F271EA6F3004D05D2 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +155,6 @@
 			children = (
 				CCCCCF4D271E9E14004D05D2 /* Tnorn.app */,
 				CCCCCF53271E9E14004D05D2 /* Tnorn.app */,
-				CCCCCF6C271EA6F3004D05D2 /* TimeTableExtension.appex */,
 				CC43BD852756626B003080AE /* PresetWidgetExtension.appex */,
 			);
 			name = Products;
@@ -231,7 +209,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				CCCCCF7C271EA6F5004D05D2 /* PBXTargetDependency */,
 				CC43BD8F2756626C003080AE /* PBXTargetDependency */,
 			);
 			name = "Tnorn (iOS)";
@@ -256,23 +233,6 @@
 			productReference = CCCCCF53271E9E14004D05D2 /* Tnorn.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CCCCCF6B271EA6F3004D05D2 /* TimeTableExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CCCCCF7E271EA6F5004D05D2 /* Build configuration list for PBXNativeTarget "TimeTableExtension" */;
-			buildPhases = (
-				CCCCCF68271EA6F3004D05D2 /* Sources */,
-				CCCCCF69271EA6F3004D05D2 /* Frameworks */,
-				CCCCCF6A271EA6F3004D05D2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TimeTableExtension;
-			productName = TimeTableExtension;
-			productReference = CCCCCF6C271EA6F3004D05D2 /* TimeTableExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -292,9 +252,6 @@
 					CCCCCF52271E9E14004D05D2 = {
 						CreatedOnToolsVersion = 13.0;
 					};
-					CCCCCF6B271EA6F3004D05D2 = {
-						CreatedOnToolsVersion = 13.0;
-					};
 				};
 			};
 			buildConfigurationList = CCCCCF41271E9E12004D05D2 /* Build configuration list for PBXProject "Tnorn" */;
@@ -312,7 +269,6 @@
 			targets = (
 				CCCCCF4C271E9E14004D05D2 /* Tnorn (iOS) */,
 				CCCCCF52271E9E14004D05D2 /* Tnorn (macOS) */,
-				CCCCCF6B271EA6F3004D05D2 /* TimeTableExtension */,
 				CC43BD842756626B003080AE /* PresetWidgetExtension */,
 			);
 		};
@@ -340,13 +296,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCCCCF5F271E9E14004D05D2 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CCCCCF6A271EA6F3004D05D2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,13 +343,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CCCCCF68271EA6F3004D05D2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -408,11 +350,6 @@
 			isa = PBXTargetDependency;
 			target = CC43BD842756626B003080AE /* PresetWidgetExtension */;
 			targetProxy = CC43BD8E2756626C003080AE /* PBXContainerItemProxy */;
-		};
-		CCCCCF7C271EA6F5004D05D2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CCCCCF6B271EA6F3004D05D2 /* TimeTableExtension */;
-			targetProxy = CCCCCF7B271EA6F5004D05D2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -708,67 +645,6 @@
 			};
 			name = Release;
 		};
-		CCCCCF7F271EA6F5004D05D2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = TimeTableExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RSD98VR55R;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TimeTable/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = TimeTable;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tnorn.TimeTable;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		CCCCCF80271EA6F5004D05D2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = TimeTableExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RSD98VR55R;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TimeTable/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = TimeTable;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tnorn.TimeTable;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -804,15 +680,6 @@
 			buildConfigurations = (
 				CCCCCF66271E9E14004D05D2 /* Debug */,
 				CCCCCF67271E9E14004D05D2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CCCCCF7E271EA6F5004D05D2 /* Build configuration list for PBXNativeTarget "TimeTableExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CCCCCF7F271EA6F5004D05D2 /* Debug */,
-				CCCCCF80271EA6F5004D05D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
